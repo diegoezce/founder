@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 import { useTypingEffect } from '../hooks/useTypingEffect';
 import { useKeyboard } from '../hooks/useKeyboard';
 import { useSound } from '../hooks/useSound';
+import { useAutoScroll } from '../hooks/useAutoScroll';
 
 export function DecisionScreen({ decision, decisionNumber, totalDecisions, onDecide, soundEnabled }) {
   const [hovered,  setHovered]  = useState(null);
@@ -28,6 +29,7 @@ export function DecisionScreen({ decision, decisionNumber, totalDecisions, onDec
     lineDelay: 60,
     onComplete: () => setTextDone(true),
   });
+  const scrollRef = useAutoScroll(displayed);
 
   const choose = useCallback((key) => {
     if (chosen) return;
@@ -52,7 +54,7 @@ export function DecisionScreen({ decision, decisionNumber, totalDecisions, onDec
       <div className="decision-counter dim">{counter}</div>
       <div className="decision-spacer-sm" />
 
-      <div className="decision-body">
+      <div className="decision-body" ref={scrollRef}>
         {displayed.map((line, i) => {
           const isMeta = i < 3;
           return (

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useTypingEffect } from '../hooks/useTypingEffect';
 import { useKeyboard } from '../hooks/useKeyboard';
 import { useSound } from '../hooks/useSound';
+import { useAutoScroll } from '../hooks/useAutoScroll';
 
 export function ResultScreen({ decision, choice, onNext, isLast, soundEnabled }) {
   const [ready, setReady] = useState(false);
@@ -32,6 +33,7 @@ export function ResultScreen({ decision, choice, onNext, isLast, soundEnabled })
     lineDelay: 90,
     onComplete: () => setReady(true),
   });
+  const scrollRef = useAutoScroll(displayed);
 
   const delta = decision.outcomes[choice].statsDelta;
 
@@ -51,7 +53,7 @@ export function ResultScreen({ decision, choice, onNext, isLast, soundEnabled })
       </div>
       <div className="result-spacer" />
 
-      <div className="result-body">
+      <div className="result-body" ref={scrollRef}>
         {displayed.map((line, i) => {
           if (line == null) return null;
           const isLabel   = line === 'YOUR DECISION:' || line === 'HISTORICAL DECISION:';

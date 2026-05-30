@@ -13,7 +13,7 @@ function Stars({ count, total = 5 }) {
   );
 }
 
-export function MainMenu({ onSelectCase, soundEnabled, onToggleSound, onCycleTheme }) {
+export function MainMenu({ onSelectCase, soundEnabled, onToggleSound, onCycleTheme, onCycleLang }) {
   const [selected, setSelected] = useState(0);
   const { playClick, playError, playConfirm } = useSound(soundEnabled);
 
@@ -42,6 +42,7 @@ export function MainMenu({ onSelectCase, soundEnabled, onToggleSound, onCycleThe
     ' ':       () => confirm(),
     'S':       () => onToggleSound(),
     'T':       () => onCycleTheme(),
+    'L':       () => onCycleLang(),
   });
 
   const item = CASE_MENU[selected];
@@ -143,7 +144,7 @@ export function MainMenu({ onSelectCase, soundEnabled, onToggleSound, onCycleThe
       {/* ── Footer ─────────────────────────── */}
       <div className="menu-footer">
         <div className="menu-hint">
-          ↑↓ NAVIGATE &nbsp;│&nbsp; ENTER SELECT &nbsp;│&nbsp; S SOUND &nbsp;│&nbsp; T THEME
+          ↑↓ NAVIGATE &nbsp;│&nbsp; ENTER SELECT &nbsp;│&nbsp; S SOUND &nbsp;│&nbsp; T THEME &nbsp;│&nbsp; L LANG
         </div>
       </div>
     </div>

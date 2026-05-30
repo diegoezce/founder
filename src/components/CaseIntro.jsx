@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useTypingEffect } from '../hooks/useTypingEffect';
 import { useKeyboard } from '../hooks/useKeyboard';
 import { useSound } from '../hooks/useSound';
+import { useAutoScroll } from '../hooks/useAutoScroll';
 
 export function CaseIntro({ caseData, onStart, soundEnabled }) {
   const [ready, setReady] = useState(false);
@@ -28,6 +29,7 @@ export function CaseIntro({ caseData, onStart, soundEnabled }) {
     lineDelay: 80,
     onComplete: () => setReady(true),
   });
+  const scrollRef = useAutoScroll(displayed);
 
   useKeyboard({
     ENTER: () => ready && onStart(),
@@ -36,7 +38,7 @@ export function CaseIntro({ caseData, onStart, soundEnabled }) {
 
   return (
     <div className="screen-content fade-in">
-      <div className="intro-lines">
+      <div className="intro-lines" ref={scrollRef}>
         {displayed.map((line, i) => {
           const isHeader = i < headerLines.length;
           return (

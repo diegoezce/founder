@@ -140,6 +140,16 @@ export default function App() {
   const toggleCmd   = () => setCmdMode(m => !m);
   const toggleSound = () => dispatch({ type: 'TOGGLE_SOUND' });
 
+  useEffect(() => {
+    const handler = (e) => {
+      if (e.target.tagName === 'INPUT') return;
+      if (e.key === 't' || e.key === 'T') cycleTheme();
+      if (e.key === 'l' || e.key === 'L') cycleLang();
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [cycleTheme, cycleLang]);
+
   const statusLeft  = state.currentCase
     ? `CASE: ${caseData?.name || '---'}`
     : 'FOUNDER v1.0';
@@ -163,6 +173,7 @@ export default function App() {
             soundEnabled={state.soundEnabled}
             onToggleSound={toggleSound}
             onCycleTheme={cycleTheme}
+            onCycleLang={cycleLang}
           />
         )}
 
