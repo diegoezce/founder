@@ -829,3 +829,38 @@
   display: flex;
   gap: 2px;
 }
+
+/* ═══════════════════════════════════════════
+   Mobile overrides
+   ═══════════════════════════════════════════ */
+
+@media (max-width: 600px) {
+  /* Menu */
+  .menu-title    { font-size: 28px; }
+  .menu-tagline  { font-size: 10px; }
+  .menu-columns  { flex-direction: column; gap: 8px; }
+  .menu-context  { display: none; }
+  .menu-list     { width: 100%; }
+  .menu-item     { font-size: 12px; padding: 5px 4px; }
+  .menu-locked   { display: none; }
+  .menu-item-locked::after { content: '·'; color: var(--amber-faint); font-size: 10px; }
+  .menu-hint     { font-size: 9px; letter-spacing: 0; }
+  .menu-access-label { display: none; }
+  .menu-border   { font-size: 11px; }
+  .menu-spacer   { height: 4px; }
+  .menu-input-row { margin-top: 8px; }
+
+  /* Decision */
+  .decision-body    { font-size: 12px; }
+  .option-row       { font-size: 12px; padding: 5px 4px; }
+  .option-desc      { display: none; }
+
+  /* Result */
+  .result-context   { font-size: 11px; }
+  .result-outcome-body { font-size: 12px; }
+
+  /* Final */
+  .final-title      { font-size: 22px; }
+  .final-stat-row   { font-size: 11px; }
+  .final-note-text  { font-size: 10px; }
+}

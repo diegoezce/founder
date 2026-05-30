@@ -310,3 +310,36 @@ body {
 .uppercase { text-transform: uppercase; }
 .dim       { opacity: 0.5; }
 .bright    { opacity: 1; color: var(--amber-bright); text-shadow: var(--glow); }
+
+/* ═══════════════════════════════════════════
+   Mobile responsive
+   ═══════════════════════════════════════════ */
+
+@media (max-width: 600px) {
+  .terminal-screen {
+    width: 100vw;
+    height: 100dvh;
+    border: none;
+    border-radius: 0;
+    font-size: 12px;
+  }
+
+  .screen-content {
+    padding: 14px 14px;
+  }
+
+  .status-bar {
+    padding: 0 10px;
+    font-size: 9px;
+    gap: 4px;
+  }
+
+  .status-bar-item:last-child {
+    display: none;
+  }
+
+  .status-btn {
+    padding: 0 2px;
+    font-size: 9px;
+  }
+}
