@@ -1,0 +1,347 @@
+{
+  "id": "costco",
+  "name": "COSTCO",
+  "founded": 1983,
+  "founders": ["JIM SINEGAL", "JEFF BROTMAN"],
+  "headquarters": "SEATTLE, WA",
+  "sector": "RETAIL",
+  "classification": "CASE FILE #002",
+  "clearanceLevel": "OMEGA",
+
+  "intro": {
+    "year": 1983,
+    "location": "SEATTLE, WASHINGTON",
+    "status": "WAREHOUSE RETAIL STARTUP",
+    "employees": 12,
+    "revenue": "PRE-REVENUE",
+    "narrative": [
+      "Seattle, 1983.",
+      "Jim Sinegal and Jeff Brotman open the first Costco",
+      "inside a converted airplane hangar.",
+      "Sinegal comes from Price Club, where he learned something",
+      "no MBA program teaches:",
+      "if you truly serve the customer, the money follows.",
+      "The bet is radical — charge people just to walk in,",
+      "and sell products at almost no profit.",
+      "Wall Street doesn't get it. Analysts hate it.",
+      "Sinegal doesn't care.",
+      "He has a theory about trust,",
+      "and he's willing to build an entire business around it."
+    ]
+  },
+
+  "decisions": [
+    {
+      "id": "decision_1",
+      "year": 1983,
+      "location": "SEATTLE, WA",
+      "title": "The Membership Is the Business",
+      "situation": "Sinegal and Brotman are designing the model from scratch.\nThe core question isn't what to sell — it's how to make money.\nAn advisor lays out three paths.\nWhichever they choose will define everything that comes after.",
+      "question": "What is the fundamental business model?",
+      "funFact": "The first Costco was a converted airplane hangar. There was no décor. Stacked boxes were the décor.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Charge annual membership, sell at near-zero margin",
+          "description": "The membership is the real business."
+        },
+        {
+          "key": "B",
+          "label": "Traditional retail — make money on product margin",
+          "description": "No membership. Easy to scale, familiar to investors."
+        },
+        {
+          "key": "C",
+          "label": "Membership plus normal margins",
+          "description": "Recurring revenue and per-product profit."
+        }
+      ],
+      "historicalChoice": "A",
+      "outcomes": {
+        "A": {
+          "isHistorical": true,
+          "headline": "THE MEMBERSHIP IS THE BUSINESS.",
+          "narrative": "Today 75% of Costco's operating profit comes from membership fees —\nnot from selling products.\nThe average product margin sits at 11%, intentional and without exceptions.\nWhen a customer pays to get in, they've already decided to buy.\nThe membership aligns incentives perfectly:\nCostco wins when the customer comes back,\nnot when it overcharges them.",
+          "statsDelta": { "vision": 3, "risk": 2, "leadership": 1, "discipline": 3, "innovation": 2 }
+        },
+        "B": {
+          "isHistorical": false,
+          "headline": "JUST ANOTHER DISCOUNT STORE.",
+          "narrative": "Without a membership, Costco is just another discount retailer.\nThe price war with Walmart and Target is brutal and endless.\nWithout the anchor of recurring revenue,\none bad quarter puts the whole model at risk.\nIt's the easiest path to explain — and the hardest to win.",
+          "statsDelta": { "vision": -1, "risk": -2, "leadership": 0, "discipline": 1, "innovation": -1 }
+        },
+        "C": {
+          "isHistorical": false,
+          "headline": "THE WORST OF BOTH WORLDS.",
+          "narrative": "Sounds reasonable on paper.\nIn practice, normal margins destroy the value proposition.\nIf a customer pays a membership fee and still pays regular prices,\nwhy did they bother?\nTrust fractures.\nOption C is the choice made by companies that want the best of both worlds —\nand end up with the worst of each.",
+          "statsDelta": { "vision": 0, "risk": -1, "leadership": 0, "discipline": -2, "innovation": 0 }
+        }
+      }
+    },
+    {
+      "id": "decision_2",
+      "year": 1987,
+      "location": "SEATTLE, WA",
+      "title": "The 14% Ceiling",
+      "situation": "Costco is growing fast. Suppliers are starting to notice\nthey're moving impossible volumes.\nOne arrives with an irresistible offer: name-brand jeans,\nhigh demand, 40% margin.\nThe finance team runs the numbers.\nThe additional profit would be enormous.\nSinegal listens to the pitch.",
+      "question": "Is the 14% maximum margin a principle or a suggestion?",
+      "funFact": "The Costco hot dog combo has cost $1.50 since 1985. When a future CEO suggested raising it, Sinegal replied: 'If you raise the price of the hot dog, I will kill you.'",
+      "options": [
+        {
+          "key": "A",
+          "label": "Hold the 14% ceiling — no exceptions",
+          "description": "Turn down the extra margin and pass every dollar to the customer."
+        },
+        {
+          "key": "B",
+          "label": "Allow exceptions for high-demand products",
+          "description": "Customers will buy regardless of price."
+        },
+        {
+          "key": "C",
+          "label": "Create a separate 'premium' tier with different margins",
+          "description": "Leave the core model untouched."
+        }
+      ],
+      "historicalChoice": "A",
+      "outcomes": {
+        "A": {
+          "isHistorical": true,
+          "headline": "THE CEILING HOLDS. THE EMPIRE IS BUILT.",
+          "narrative": "The 14% ceiling isn't a pricing strategy — it's a promise.\nCostco members know, without checking,\nthat anything on the shelf is the best price they'll find anywhere.\nThat trust is an asset that doesn't show up on the balance sheet.\nToday, Costco's membership renewal rate in the U.S. is 93%.\nThat's not loyalty — that's faith.",
+          "statsDelta": { "vision": 2, "risk": 1, "leadership": 3, "discipline": 3, "innovation": 1 }
+        },
+        "B": {
+          "isHistorical": false,
+          "headline": "THE FIRST EXCEPTION IS THE LAST PRINCIPLE.",
+          "narrative": "The first exception always seems reasonable. So does the second.\nBy the tenth, there's no justification left\nand no one remembers when it started.\nLimits with exceptions aren't limits — they're suggestions.\nAnd a business built on suggestions can't promise you anything.",
+          "statsDelta": { "vision": -1, "risk": 1, "leadership": -2, "discipline": -3, "innovation": 0 }
+        },
+        "C": {
+          "isHistorical": false,
+          "headline": "TWO COMPANIES IN ONE.",
+          "narrative": "A premium tier with different margins is the beginning\nof two companies living inside one.\nCustomers start wondering which products Costco actually stands behind\nand which ones are just on the shelf.\nInternal segmentation destroys the simplicity of the message —\nand the simplicity was everything.",
+          "statsDelta": { "vision": -1, "risk": 0, "leadership": -1, "discipline": -2, "innovation": 1 }
+        }
+      }
+    },
+    {
+      "id": "decision_3",
+      "year": 1992,
+      "location": "SEATTLE, WA",
+      "title": "Kirkland Signature",
+      "situation": "The product team proposes launching a private label brand.\nThe question isn't whether to do it — it's how to position it.\nThree schools of thought emerge inside the company.\nSinegal listens to all three.",
+      "question": "What kind of brand is Kirkland Signature going to be?",
+      "funFact": "Kirkland Signature now generates over $59 billion in annual sales — larger than Nike ($51B), Coca-Cola ($45B), and the entire California wine industry combined.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Equal to or better than market-leading brands, at lower price",
+          "description": "Zero quality compromises."
+        },
+        {
+          "key": "B",
+          "label": "Budget white-label line, clearly inferior",
+          "description": "Aimed at the pure price-sensitive segment."
+        },
+        {
+          "key": "C",
+          "label": "Private label only in categories with no dominant brand",
+          "description": "Avoid conflicts with major suppliers."
+        }
+      ],
+      "historicalChoice": "A",
+      "outcomes": {
+        "A": {
+          "isHistorical": true,
+          "headline": "KIRKLAND REPLACES THE BRANDS.",
+          "narrative": "Kirkland doesn't compete with brands. It replaces them.\nKirkland bourbon is bottled by the same distiller\nbehind some of the most expensive bottles on the market.\nKirkland vodka is produced in France\nby the same makers as Grey Goose.\nThe customer choosing Kirkland isn't buying generic —\nthey're buying retail's best-kept secret.",
+          "statsDelta": { "vision": 3, "risk": 2, "leadership": 2, "discipline": 2, "innovation": 3 }
+        },
+        "B": {
+          "isHistorical": false,
+          "headline": "GENERIC IS NOT A STRATEGY.",
+          "narrative": "A cheap white-label line reinforces the idea that cheap means bad.\nCustomers buy it when there's no alternative, not because they trust it.\nWithout trust, a private label is just another SKU.\nIt never becomes a reason to shop at Costco —\nonly an emergency fallback.",
+          "statsDelta": { "vision": -2, "risk": -1, "leadership": -1, "discipline": 1, "innovation": -2 }
+        },
+        "C": {
+          "isHistorical": false,
+          "headline": "STRATEGIC TIMIDITY.",
+          "narrative": "Operationally sensible — don't fight your own suppliers.\nBut a private label that avoids the important categories never achieves scale.\nKirkland would have been a niche product line\ninstead of the $59 billion phenomenon it is today.\nStrategic timidity has an enormous price tag.",
+          "statsDelta": { "vision": -1, "risk": -1, "leadership": 0, "discipline": 1, "innovation": -1 }
+        }
+      }
+    }
+  ],
+
+  "profiles": {
+    "high": {
+      "title": "THE TRUST ARCHITECT",
+      "description": "You made the same calls Jim Sinegal made. You understood something most people can't see: that giving up short-term profit is the most valuable investment there is.",
+      "sinegalSimilarity": 91
+    },
+    "medium": {
+      "title": "THE SMART RETAILER",
+      "description": "Solid decisions, but you gave ground at a few critical moments. Your Costco exists and is profitable — but it's missing total conviction.",
+      "sinegalSimilarity": 61
+    },
+    "low": {
+      "title": "THE DISCOUNT OF DISCOUNTS",
+      "description": "You chose paths that looked safer in the short run. Your company survives, but it's one of many in a crowded discount retail market.",
+      "sinegalSimilarity": 28
+    }
+  },
+
+  "historicalNote": "Costco opened its first location in 1983 and merged with Price Club in 1993.\nJim Sinegal led the company until 2012, staying true to every original principle\neven under relentless pressure from Wall Street to raise margins.\nWhen analysts asked why he didn't charge more, he answered: 'Because we can.'\nToday Costco has over 130 million cardholders, a 93% membership renewal rate,\nand Kirkland Signature is the most successful private label in retail history\nwith over $59 billion in annual sales.\nThe hot dog still costs $1.50.",
+
+  "i18n": {
+    "es": {
+      "intro": {
+        "year": 1983,
+        "location": "SEATTLE, WASHINGTON",
+        "status": "STARTUP DE RETAIL MAYORISTA",
+        "employees": 12,
+        "revenue": "PRE-REVENUE",
+        "narrative": [
+          "Seattle, 1983.",
+          "Jim Sinegal y Jeff Brotman abren el primer Costco",
+          "en un hangar de aviones reconvertido.",
+          "Sinegal viene de Price Club, donde aprendió algo",
+          "que ningún MBA enseña:",
+          "si realmente servís al cliente, el dinero viene solo.",
+          "La apuesta es radical — cobrar para entrar,",
+          "y vender casi sin ganancia.",
+          "Wall Street no lo entiende. Los analistas lo odian.",
+          "Sinegal no les presta atención.",
+          "Tiene una teoría sobre la confianza,",
+          "y está dispuesto a construir todo un negocio alrededor de ella."
+        ]
+      },
+      "decisions": [
+        {
+          "id": "decision_1",
+          "year": 1983,
+          "location": "SEATTLE, WA",
+          "title": "El negocio es la membresía",
+          "situation": "Sinegal y Brotman diseñan el modelo desde cero.\nLa pregunta central no es qué vender — es cómo ganar dinero.\nUn asesor les propone tres caminos.\nEl que elijan va a definir todo lo que venga después.",
+          "question": "¿Cuál es el modelo de negocio fundamental?",
+          "funFact": "El primer local de Costco era un hangar de aviones en Seattle. No tenía decoración. Las cajas apiladas eran la decoración.",
+          "options": [
+            { "key": "A", "label": "Membresía anual y vender casi sin margen", "description": "El membership es el negocio real." },
+            { "key": "B", "label": "Retail tradicional — ganar en margen de producto", "description": "Sin membresía. Fácil de escalar, familiar para inversores." },
+            { "key": "C", "label": "Membresía más márgenes normales", "description": "Ingresos recurrentes y ganancia por producto." }
+          ],
+          "historicalChoice": "A",
+          "outcomes": {
+            "A": {
+              "isHistorical": true,
+              "headline": "EL NEGOCIO ES LA MEMBRESÍA.",
+              "narrative": "Hoy el 75% de la utilidad operativa de Costco viene de las cuotas de membresía —\nno de vender productos.\nEl margen promedio en producto es del 11%, intencional y sin excepciones.\nCuando el cliente paga para entrar, ya decidió comprar.\nLa membresía alinea los incentivos:\nCostco gana si el cliente vuelve, no si le cobra de más.",
+              "statsDelta": { "vision": 3, "risk": 2, "leadership": 1, "discipline": 3, "innovation": 2 }
+            },
+            "B": {
+              "isHistorical": false,
+              "headline": "SOLO OTRO RETAILER DE DESCUENTO.",
+              "narrative": "Sin membresía, Costco es solo otro retailer de descuento.\nLa guerra de precios con Walmart y Target es brutal y sin fin.\nSin el ancla de ingresos recurrentes,\ncualquier trimestre malo pone en riesgo todo el modelo.\nEs el camino más fácil de explicar — y el más difícil de ganar.",
+              "statsDelta": { "vision": -1, "risk": -2, "leadership": 0, "discipline": 1, "innovation": -1 }
+            },
+            "C": {
+              "isHistorical": false,
+              "headline": "LO PEOR DE LOS DOS MUNDOS.",
+              "narrative": "Suena razonable en papel.\nEn la práctica, el margen normal destruye la propuesta de valor.\nSi el cliente paga membresía y encima paga precios normales,\n¿para qué volvió?\nLa confianza se fractura.\nEl modelo C es el que eligen las empresas que quieren lo mejor de dos mundos —\ny terminan con lo peor de ambos.",
+              "statsDelta": { "vision": 0, "risk": -1, "leadership": 0, "discipline": -2, "innovation": 0 }
+            }
+          }
+        },
+        {
+          "id": "decision_2",
+          "year": 1987,
+          "location": "SEATTLE, WA",
+          "title": "El techo del 14%",
+          "situation": "Costco crece. Los proveedores empiezan a notar\nque venden volúmenes imposibles.\nUno llega con una propuesta irresistible: jeans de marca,\nalta demanda, margen del 40%.\nEl equipo financiero hace los números.\nLa ganancia adicional sería enorme.\nSinegal escucha la propuesta.",
+          "question": "¿El límite del 14% es un principio o una sugerencia?",
+          "funFact": "El hotdog combo de Costco cuesta $1.50 desde 1985. Cuando un CEO propuso subirlo, Sinegal respondió: 'Si subís el precio del hotdog, te mato.'",
+          "options": [
+            { "key": "A", "label": "Mantener el límite del 14% sin excepciones", "description": "Rechazar el margen extra y trasladar el beneficio al precio." },
+            { "key": "B", "label": "Hacer excepciones para productos de alta demanda", "description": "El cliente igual va a comprar." },
+            { "key": "C", "label": "Crear una categoría 'premium' con márgenes distintos", "description": "Sin tocar el modelo base." }
+          ],
+          "historicalChoice": "A",
+          "outcomes": {
+            "A": {
+              "isHistorical": true,
+              "headline": "EL LÍMITE SOSTIENE. EL IMPERIO SE CONSTRUYE.",
+              "narrative": "El límite del 14% no es una estrategia de precios — es una promesa.\nEl cliente de Costco sabe, sin verificar,\nque si algo está en la góndola es porque es el mejor precio posible.\nEsa confianza es un activo que no aparece en el balance.\nHoy Costco tiene una tasa de renovación de membresía del 93%.\nNo es fidelidad — es fe.",
+              "statsDelta": { "vision": 2, "risk": 1, "leadership": 3, "discipline": 3, "innovation": 1 }
+            },
+            "B": {
+              "isHistorical": false,
+              "headline": "LA PRIMERA EXCEPCIÓN ES EL ÚLTIMO PRINCIPIO.",
+              "narrative": "La primera excepción siempre parece razonable. La segunda también.\nA la décima ya no tiene justificación\ny nadie recuerda cuándo empezó todo.\nLos límites que tienen excepciones no son límites — son sugerencias.\nY una empresa construida sobre sugerencias no puede prometerte nada.",
+              "statsDelta": { "vision": -1, "risk": 1, "leadership": -2, "discipline": -3, "innovation": 0 }
+            },
+            "C": {
+              "isHistorical": false,
+              "headline": "DOS EMPRESAS EN UNA.",
+              "narrative": "Una categoría premium con márgenes diferentes\nes la antesala de dos empresas en una.\nEl cliente empieza a preguntarse cuáles son los productos que Costco defiende\ny cuáles son los que solo están en la góndola.\nLa segmentación interna destruye la simplicidad del mensaje —\ny la simplicidad era todo.",
+              "statsDelta": { "vision": -1, "risk": 0, "leadership": -1, "discipline": -2, "innovation": 1 }
+            }
+          }
+        },
+        {
+          "id": "decision_3",
+          "year": 1992,
+          "location": "SEATTLE, WA",
+          "title": "Kirkland Signature",
+          "situation": "El equipo de producto propone lanzar una marca propia.\nLa decisión no es si hacerlo — es cómo posicionarla.\nHay tres escuelas de pensamiento dentro de la empresa.\nSinegal escucha las tres.",
+          "question": "¿Qué tipo de marca va a ser Kirkland Signature?",
+          "funFact": "Kirkland Signature factura hoy más de $59 billion anuales — más que Nike ($51B), Coca-Cola ($45B), y toda la industria del vino de California junta.",
+          "options": [
+            { "key": "A", "label": "Igual o mejor que la marca líder, siempre a menor precio", "description": "Cero compromisos de calidad." },
+            { "key": "B", "label": "Marca blanca económica, claramente inferior", "description": "Para el segmento que solo mira el precio." },
+            { "key": "C", "label": "Marca propia solo donde no hay marca dominante", "description": "Sin generar conflictos con proveedores." }
+          ],
+          "historicalChoice": "A",
+          "outcomes": {
+            "A": {
+              "isHistorical": true,
+              "headline": "KIRKLAND REEMPLAZA LAS MARCAS.",
+              "narrative": "Kirkland no compite con las marcas, las reemplaza.\nEl bourbon Kirkland lo embotella el mismo destilador\nque hace algunas de las botellas más caras del mercado.\nEl vodka Kirkland es fabricado en Francia\npor los mismos productores del Grey Goose.\nEl cliente que elige Kirkland no está comprando genérico —\nestá comprando el secreto mejor guardado del retail.",
+              "statsDelta": { "vision": 3, "risk": 2, "leadership": 2, "discipline": 2, "innovation": 3 }
+            },
+            "B": {
+              "isHistorical": false,
+              "headline": "GENÉRICO NO ES UNA ESTRATEGIA.",
+              "narrative": "Una marca blanca barata refuerza la idea de que barato es malo.\nEl cliente la compra cuando no queda otra, no porque confíe en ella.\nSin confianza, una marca propia es solo un SKU más.\nNunca se convierte en razón para ir a Costco —\nsolo en producto de emergencia.",
+              "statsDelta": { "vision": -2, "risk": -1, "leadership": -1, "discipline": 1, "innovation": -2 }
+            },
+            "C": {
+              "isHistorical": false,
+              "headline": "COBARDÍA ESTRATÉGICA.",
+              "narrative": "Tiene lógica operacional — no pelear con tus propios proveedores.\nPero una marca propia que evita las categorías importantes nunca alcanza escala.\nKirkland habría sido una línea de nicho\nen lugar del fenómeno de $59 billion que es hoy.\nLa cobardía estratégica tiene un costo enorme.",
+              "statsDelta": { "vision": -1, "risk": -1, "leadership": 0, "discipline": 1, "innovation": -1 }
+            }
+          }
+        }
+      ],
+      "profiles": {
+        "high": {
+          "title": "EL ARQUITECTO DE CONFIANZA",
+          "description": "Tomaste las mismas decisiones que Jim Sinegal. Entendiste algo que la mayoría no puede ver: que renunciar a la ganancia de corto plazo es la inversión más rentable que existe.",
+          "sinegalSimilarity": 91
+        },
+        "medium": {
+          "title": "EL RETAILER INTELIGENTE",
+          "description": "Decisiones sólidas, pero cediste en algunos momentos clave. Tu Costco existe y es rentable — pero le falta convicción total.",
+          "sinegalSimilarity": 61
+        },
+        "low": {
+          "title": "EL DESCUENTO DE DESCUENTOS",
+          "description": "Elegiste los caminos que parecían más seguros a corto plazo. Tu empresa sobrevive, pero es una más en un mercado lleno de retailers de descuento.",
+          "sinegalSimilarity": 28
+        }
+      },
+      "historicalNote": "Costco abrió su primer local en 1983 y se fusionó con Price Club en 1993.\nJim Sinegal lideró la empresa hasta 2012, fiel a cada principio original\nbajo presión constante de Wall Street para subir márgenes.\nCuando los analistas le preguntaban por qué no cobraba más, respondía: 'Porque podemos.'\nHoy Costco tiene más de 130 millones de tarjetahabientes, 93% de tasa de renovación,\ny Kirkland Signature es la marca propia más exitosa de la historia del retail\ncon más de $59 billion en ventas anuales.\nEl hotdog sigue costando $1.50."
+    }
+  }
+}

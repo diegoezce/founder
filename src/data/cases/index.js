@@ -1,16 +1,32 @@
 import microsoft from './microsoft.json';
+import costco    from './costco.json';
 
 export const CASES = [
   microsoft,
-  // Future cases — drop JSON files here and add to this array
-  // import costco from './costco.json';
-  // import amazon from './amazon.json';
+  costco,
+  // import amazon   from './amazon.json';
   // import cocacola from './cocacola.json';
-  // import nike from './nike.json';
-  // import netflix from './netflix.json';
-  // import ikea from './ikea.json';
-  // import disney from './disney.json';
+  // import nike     from './nike.json';
+  // import netflix  from './netflix.json';
+  // import ikea     from './ikea.json';
+  // import disney   from './disney.json';
 ];
+
+/**
+ * Returns the case data merged with the requested language overlay.
+ * Falls back to the base (English) content if no translation exists.
+ */
+export function getLocalizedCase(caseData, lang) {
+  if (!lang || lang === 'en' || !caseData?.i18n?.[lang]) return caseData;
+  const t = caseData.i18n[lang];
+  return {
+    ...caseData,
+    intro:         t.intro         ?? caseData.intro,
+    decisions:     t.decisions     ?? caseData.decisions,
+    profiles:      t.profiles      ?? caseData.profiles,
+    historicalNote:t.historicalNote ?? caseData.historicalNote,
+  };
+}
 
 export const CASE_MENU = [
   {
@@ -20,7 +36,7 @@ export const CASE_MENU = [
     playtime: '10-15 MIN', difficulty: 3,
   },
   {
-    id: 'costco', label: 'COSTCO', available: false,
+    id: 'costco', label: 'COSTCO', available: true,
     year: 1983, location: 'SAN DIEGO, CA',
     teaser: 'A warehouse concept that breaks\nevery rule of retail.',
     playtime: '10-15 MIN', difficulty: 2,

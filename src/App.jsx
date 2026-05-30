@@ -1,6 +1,6 @@
 import { useReducer, useCallback, useState, useEffect } from 'react';
 import { reducer, createInitialState, SCREENS } from './engine/gameEngine';
-import { getCaseById } from './data/cases/index';
+import { getCaseById, getLocalizedCase } from './data/cases/index';
 import { HELP_TEXT } from './engine/commandParser';
 
 import { BootSequence }   from './components/BootSequence';
@@ -24,17 +24,29 @@ export default function App() {
   const [theme, setTheme] = useState(
     () => localStorage.getItem('founder-theme') || 'amber'
   );
+  const [lang, setLang] = useState(
+    () => localStorage.getItem('founder-lang') || 'en'
+  );
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('founder-theme', theme);
   }, [theme]);
 
+  useEffect(() => {
+    localStorage.setItem('founder-lang', lang);
+  }, [lang]);
+
   const cycleTheme = useCallback(() => {
     setTheme(t => THEMES[(THEMES.indexOf(t) + 1) % THEMES.length]);
   }, []);
 
-  const caseData = state.currentCase ? getCaseById(state.currentCase) : null;
+  const cycleLang = useCallback(() => {
+    setLang(l => l === 'en' ? 'es' : 'en');
+  }, []);
+
+  const rawCase   = state.currentCase ? getCaseById(state.currentCase) : null;
+  const caseData  = getLocalizedCase(rawCase, lang);
   const decision = caseData
     ? caseData.decisions[state.decisionIndex] ?? null
     : null;
@@ -224,6 +236,9 @@ export default function App() {
                 </span>
                 <span className="status-btn" onClick={cycleTheme} title="Cycle theme [T]">
                   [{theme.toUpperCase()}]
+                </span>
+                <span className="status-btn" onClick={cycleLang} title="Toggle language">
+                  [{lang.toUpperCase()}]
                 </span>
                 <span className="status-btn" onClick={toggleCmd} title="Terminal mode">
                   [CMD]
