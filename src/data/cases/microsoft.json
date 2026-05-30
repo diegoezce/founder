@@ -1,0 +1,184 @@
+{
+  "id": "microsoft",
+  "name": "MICROSOFT",
+  "tagline": "The Empire of Software",
+  "founded": 1975,
+  "founders": ["BILL GATES", "PAUL ALLEN"],
+  "headquarters": "ALBUQUERQUE, NM → SEATTLE, WA",
+  "sector": "SOFTWARE",
+  "classification": "CASE FILE #001",
+  "clearanceLevel": "OMEGA",
+  "intro": {
+    "year": 1980,
+    "location": "SEATTLE, WASHINGTON",
+    "status": "SMALL SOFTWARE COMPANY",
+    "employees": 40,
+    "revenue": "$8M/YEAR",
+    "narrative": [
+      "It is August 1980.",
+      "Microsoft is a 5-year-old company with 40 employees.",
+      "You have made your name selling BASIC interpreters.",
+      "Then the phone rings.",
+      "It is IBM.",
+      "They need an operating system for a top-secret project.",
+      "A personal computer for the masses.",
+      "They need it in 12 months.",
+      "The entire future of computing hangs in the balance."
+    ]
+  },
+  "decisions": [
+    {
+      "id": "d1",
+      "year": 1980,
+      "location": "SEATTLE, WA",
+      "situation": "IBM needs an operating system for its new PC.\nYou don't have one — but you know where to find one.\nA small company called Seattle Computer Products sells\nan OS called QDOS for $75,000.\nYou could acquire it and license it to IBM.",
+      "question": "IBM needs an OS. You don't have one. What do you do?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Sell the OS outright to IBM",
+          "description": "Take the guaranteed money. Clean and simple."
+        },
+        {
+          "key": "B",
+          "label": "License the OS — retain all rights",
+          "description": "IBM pays per unit. You keep ownership of the platform."
+        },
+        {
+          "key": "C",
+          "label": "Decline. Focus on languages.",
+          "description": "This is not your business. Stick to what you know."
+        }
+      ],
+      "historicalChoice": "B",
+      "outcomes": {
+        "A": {
+          "isHistorical": false,
+          "headline": "SAFE MONEY. LOST EMPIRE.",
+          "narrative": "You sell MS-DOS to IBM for a one-time fee.\nIBM ships 50 million PCs.\nYou receive a check and watch from the sidelines\nas the PC revolution reshapes civilization.\nOther companies clone the IBM PC — and they need an OS too.\nThat OS belongs to IBM now.\nNot you.",
+          "statsDelta": { "vision": -30, "risk": -20, "leadership": 0, "discipline": 10, "innovation": -10 }
+        },
+        "B": {
+          "isHistorical": true,
+          "headline": "THE DEAL OF THE CENTURY.",
+          "narrative": "You license MS-DOS to IBM — and retain all rights.\nIBM ships. Then Compaq clones the IBM PC.\nThen hundreds of manufacturers do the same.\nEvery single one needs your operating system.\nMS-DOS becomes the standard for an entire industry.\nYou didn't build the hardware.\nYou own the platform.",
+          "statsDelta": { "vision": 30, "risk": 25, "leadership": 20, "discipline": 15, "innovation": 20 }
+        },
+        "C": {
+          "isHistorical": false,
+          "headline": "THE CALL YOU NEVER TOOK.",
+          "narrative": "You pass on IBM.\nIBM finds another supplier.\nThe PC ships without you.\nYou watch as the personal computing era begins —\nand someone else owns the operating system\nthat runs on every desk in America.",
+          "statsDelta": { "vision": -40, "risk": -30, "leadership": -20, "discipline": 5, "innovation": -15 }
+        }
+      }
+    },
+    {
+      "id": "d2",
+      "year": 1985,
+      "location": "REDMOND, WA",
+      "situation": "MS-DOS has made you rich. But a new threat looms.\nApple has released the Macintosh — a computer with\na graphical interface. Icons. Windows. A mouse.\nYour engineers have been quietly building something similar.\nThey call it WINDOWS 1.0.\nIt is... not impressive. Yet.\nDo you release it — or wait until it's ready?",
+      "question": "Windows is unfinished but the GUI war has started. What do you do?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Ship Windows 1.0 now",
+          "description": "Stake your claim. Iterate in public. First-mover matters."
+        },
+        {
+          "key": "B",
+          "label": "Wait 2 more years. Ship it right.",
+          "description": "Quality over speed. Don't embarrass the company."
+        },
+        {
+          "key": "C",
+          "label": "License the Mac OS from Apple instead",
+          "description": "Build on their foundation. Collaborate, don't compete."
+        }
+      ],
+      "historicalChoice": "A",
+      "outcomes": {
+        "A": {
+          "isHistorical": true,
+          "headline": "SHIP IT. DOMINATE LATER.",
+          "narrative": "Windows 1.0 ships November 20, 1985.\nCritics call it clunky. Slow. A bad Mac clone.\nThey're right.\nBut you own the relationship with every PC manufacturer.\nEvery iteration makes Windows faster, better, more familiar.\nWindows 3.0 in 1990 will sell 10 million copies.\nWindows 95 will define a generation.\nThe race is won by the one who stayed in it.",
+          "statsDelta": { "vision": 20, "risk": 20, "leadership": 25, "discipline": 15, "innovation": 15 }
+        },
+        "B": {
+          "isHistorical": false,
+          "headline": "PERFECT IS THE ENEMY OF DOMINANT.",
+          "narrative": "You wait. Polish. Refine.\nWhile you wait, Apple signs deals with software companies.\nThe Mac becomes the creative professional standard.\nWhen Windows finally ships in 1987, the market\nhas already formed opinions about who owns the GUI future.\nLate is worse than imperfect.",
+          "statsDelta": { "vision": -10, "risk": -15, "leadership": -20, "discipline": 20, "innovation": -5 }
+        },
+        "C": {
+          "isHistorical": false,
+          "headline": "DEPENDENT ON THE ENEMY.",
+          "narrative": "Apple licenses the Mac OS to you — with strict limitations.\nYou can build software, not a platform.\nSteve Jobs watches your every move.\nIn 1987, he revokes the license citing violations.\nYou're back to square one, years behind, and legally tangled.\nNever build on someone else's foundation.",
+          "statsDelta": { "vision": -20, "risk": -10, "leadership": -25, "discipline": 5, "innovation": -10 }
+        }
+      }
+    },
+    {
+      "id": "d3",
+      "year": 1995,
+      "location": "REDMOND, WA",
+      "situation": "Something new is happening.\nA network called the Internet is going mainstream.\nA company called Netscape has built a browser\nthat 40 million people are using to navigate it.\nNetscape is growing 10% per week.\nIf the browser becomes the platform, Windows becomes irrelevant.\nYou write a memo to your entire leadership team.\nYou call it: THE INTERNET TIDAL WAVE.",
+      "question": "Netscape is eating the web. Windows could become irrelevant. What do you do?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Build Internet Explorer. Bundle it free with Windows.",
+          "description": "Use your platform monopoly to crush Netscape."
+        },
+        {
+          "key": "B",
+          "label": "Acquire Netscape",
+          "description": "Buy the threat. Integrate their browser into your ecosystem."
+        },
+        {
+          "key": "C",
+          "label": "Ignore it. The web is a fad.",
+          "description": "Focus on Office and Windows. Your core business."
+        }
+      ],
+      "historicalChoice": "A",
+      "outcomes": {
+        "A": {
+          "isHistorical": true,
+          "headline": "INTERNET EXPLORER. BROWSER WARS IGNITED.",
+          "narrative": "You build Internet Explorer and bundle it free with Windows.\nNetscape charged $40 per copy. Yours is free.\nBy 1999, IE has 75% market share.\nNetscape is finished.\nThe DOJ will later call this anticompetitive.\nYou will spend years in court.\nBut for a decade, you own the web portal\nthrough which most of the world experiences the internet.\nDomination has a price.",
+          "statsDelta": { "vision": 25, "risk": 20, "leadership": 20, "discipline": 20, "innovation": 10 }
+        },
+        "B": {
+          "isHistorical": false,
+          "headline": "THE ACQUISITION THAT NEVER WAS.",
+          "narrative": "You approach Netscape.\nThey laugh.\nTheir market cap is soaring. Why sell?\nYou offer $4 billion. They want $7 billion.\nNegotiations collapse.\nYou go back to Redmond and start building a browser anyway.\nSame outcome — 18 months later.",
+          "statsDelta": { "vision": 10, "risk": 5, "leadership": 10, "discipline": 15, "innovation": 15 }
+        },
+        "C": {
+          "isHistorical": false,
+          "headline": "KODAK MOMENT.",
+          "narrative": "You watch Netscape grow.\nThen AOL. Then Yahoo. Then Google.\nEach one extracts value that bypasses Windows entirely.\nBy 2004, the most important software in the world\nruns in a browser — one you don't control.\nThe platform you built was bypassed\nbecause you didn't believe in the network.\nThis is how empires fall.",
+          "statsDelta": { "vision": -35, "risk": -25, "leadership": -30, "discipline": 10, "innovation": -25 }
+        }
+      }
+    }
+  ],
+  "profiles": {
+    "high": {
+      "title": "PLATFORM VISIONARY",
+      "description": "You saw the architecture of industries before they existed.",
+      "gatesSimilarity": 91
+    },
+    "medium": {
+      "title": "STRATEGIC OPERATOR",
+      "description": "Solid instincts. You build defensible positions.",
+      "gatesSimilarity": 68
+    },
+    "low": {
+      "title": "CAUTIOUS EXECUTIVE",
+      "description": "Risk-averse. You protect what exists rather than build what could be.",
+      "gatesSimilarity": 34
+    }
+  },
+  "historicalNote": "Microsoft went on to become the most valuable company\nin the world — twice. First in the 1990s, again in the 2020s.\nBill Gates retired from the CEO role in 2000.\nSatya Nadella took over in 2014 and reinvented the company\naround cloud computing and AI.\nMicrosoft's market cap reached $3 trillion in 2024."
+}
