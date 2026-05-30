@@ -180,5 +180,91 @@
       "gatesSimilarity": 34
     }
   },
-  "historicalNote": "Microsoft went on to become the most valuable company\nin the world — twice. First in the 1990s, again in the 2020s.\nBill Gates retired from the CEO role in 2000.\nSatya Nadella took over in 2014 and reinvented the company\naround cloud computing and AI.\nMicrosoft's market cap reached $3 trillion in 2024."
+  "historicalNote": "Microsoft went on to become the most valuable company\nin the world — twice. First in the 1990s, again in the 2020s.\nBill Gates retired from the CEO role in 2000.\nSatya Nadella took over in 2014 and reinvented the company\naround cloud computing and AI.\nMicrosoft's market cap reached $3 trillion in 2024.",
+
+  "i18n": {
+    "es": {
+      "tagline": "El Imperio del Software",
+      "intro": {
+        "year": 1980,
+        "location": "SEATTLE, WASHINGTON",
+        "status": "PEQUEÑA EMPRESA DE SOFTWARE",
+        "employees": 40,
+        "revenue": "$8M/AÑO",
+        "narrative": [
+          "Es agosto de 1980.",
+          "Microsoft es una empresa de 5 años con 40 empleados.",
+          "Se hicieron conocidos vendiendo intérpretes BASIC.",
+          "Entonces suena el teléfono.",
+          "Es IBM.",
+          "Necesitan un sistema operativo para un proyecto ultra secreto.",
+          "Una computadora personal para el público masivo.",
+          "Lo necesitan en 12 meses.",
+          "El futuro entero de la computación está en juego."
+        ]
+      },
+      "decisions": [
+        {
+          "id": "d1",
+          "year": 1980,
+          "location": "SEATTLE, WA",
+          "situation": "IBM necesita un sistema operativo para su nueva PC.\nVos no tenés uno — pero sabés dónde conseguirlo.\nUna empresa pequeña llamada Seattle Computer Products\nvende un OS llamado QDOS por $75.000.\nPodrías comprarlo y licenciárselo a IBM.",
+          "question": "IBM necesita un OS. Vos no tenés uno. ¿Qué hacés?",
+          "options": [
+            { "key": "A", "label": "Vender el OS directamente a IBM", "description": "Tomá el dinero garantizado. Simple y limpio." },
+            { "key": "B", "label": "Licenciar el OS — conservar todos los derechos", "description": "IBM paga por unidad. Vos conservás la propiedad de la plataforma." },
+            { "key": "C", "label": "Declinar. Seguir con lenguajes de programación.", "description": "Esto no es tu negocio. Quedate con lo que sabés." }
+          ],
+          "historicalChoice": "B",
+          "outcomes": {
+            "A": { "isHistorical": false, "headline": "PLATA SEGURA. IMPERIO PERDIDO.", "narrative": "Vendés MS-DOS a IBM por un pago único.\nIBM vende 50 millones de PCs.\nVos recibís un cheque y mirás desde afuera\ncómo la revolución de las PCs transforma la civilización.\nOtras empresas clonan la IBM PC — y todas necesitan un OS.\nEse OS ahora le pertenece a IBM.\nNo a vos." },
+            "B": { "isHistorical": true,  "headline": "EL NEGOCIO DEL SIGLO.", "narrative": "Licenciás MS-DOS a IBM — y conservás todos los derechos.\nIBM vende. Después Compaq clona la IBM PC.\nDespués lo hacen cientos de fabricantes.\nCada uno necesita tu sistema operativo.\nMS-DOS se convierte en el estándar de toda una industria.\nNo construiste el hardware.\nEres dueño de la plataforma." },
+            "C": { "isHistorical": false, "headline": "EL LLAMADO QUE NUNCA ATENDISTE.", "narrative": "Rechazás a IBM.\nIBM encuentra otro proveedor.\nLa PC sale al mercado sin vos.\nMirás cómo comienza la era de la computación personal —\ny otra empresa es dueña del sistema operativo\nque corre en cada escritorio de América." }
+          }
+        },
+        {
+          "id": "d2",
+          "year": 1985,
+          "location": "REDMOND, WA",
+          "situation": "MS-DOS te hizo rico. Pero aparece una nueva amenaza.\nApple lanzó la Macintosh — una computadora con\nuna interfaz gráfica. Íconos. Ventanas. Un mouse.\nTus ingenieros llevan tiempo construyendo algo similar.\nLo llaman WINDOWS 1.0.\nEs... poco impresionante. Por ahora.\n¿Lo lanzás — o esperás a que esté listo?",
+          "question": "Windows está incompleto pero la guerra de interfaces gráficas ya empezó. ¿Qué hacés?",
+          "options": [
+            { "key": "A", "label": "Lanzar Windows 1.0 ahora", "description": "Marcá tu territorio. Iterá en público. El primero en llegar importa." },
+            { "key": "B", "label": "Esperar 2 años más. Lanzarlo bien.", "description": "Calidad antes que velocidad. No embarrés a la empresa." },
+            { "key": "C", "label": "Licenciar el Mac OS de Apple", "description": "Construí sobre su base. Colaborá en lugar de competir." }
+          ],
+          "historicalChoice": "A",
+          "outcomes": {
+            "A": { "isHistorical": true,  "headline": "LANZALO. DOMINÁ DESPUÉS.", "narrative": "Windows 1.0 sale el 20 de noviembre de 1985.\nLos críticos lo llaman torpe. Lento. Un mal clon del Mac.\nTienen razón.\nPero vos tenés la relación con cada fabricante de PCs.\nCada iteración hace a Windows más rápido, mejor, más familiar.\nWindows 3.0 en 1990 vende 10 millones de copias.\nWindows 95 define toda una generación.\nLa carrera la gana el que se mantiene en ella." },
+            "B": { "isHistorical": false, "headline": "LA PERFECCIÓN ES EL ENEMIGO DE LA DOMINACIÓN.", "narrative": "Esperás. Pulís. Refinás.\nMientras esperás, Apple firma acuerdos con empresas de software.\nLa Mac se convierte en el estándar para profesionales creativos.\nCuando Windows finalmente sale en 1987, el mercado\nya tiene opiniones formadas sobre quién es dueño del futuro gráfico.\nLlegar tarde es peor que llegar imperfecto." },
+            "C": { "isHistorical": false, "headline": "DEPENDIENTE DEL ENEMIGO.", "narrative": "Apple te licencia el Mac OS — con restricciones estrictas.\nPodés construir software, no una plataforma.\nSteve Jobs vigila cada uno de tus movimientos.\nEn 1987, revoca la licencia alegando violaciones.\nEstás de vuelta en cero, años atrás y enredado legalmente.\nNunca construyas sobre la base de otro." }
+          }
+        },
+        {
+          "id": "d3",
+          "year": 1995,
+          "location": "REDMOND, WA",
+          "situation": "Algo nuevo está pasando.\nUna red llamada Internet se está volviendo masiva.\nUna empresa llamada Netscape construyó un navegador\nque 40 millones de personas usan para explorarlo.\nNetscape crece un 10% por semana.\nSi el navegador se convierte en la plataforma, Windows se vuelve irrelevante.\nEscribís un memo para todo tu equipo directivo.\nLo llamás: THE INTERNET TIDAL WAVE.",
+          "question": "Netscape se está comiendo la web. Windows podría volverse irrelevante. ¿Qué hacés?",
+          "options": [
+            { "key": "A", "label": "Construir Internet Explorer. Incluirlo gratis con Windows.", "description": "Usá el monopolio de tu plataforma para aplastar a Netscape." },
+            { "key": "B", "label": "Adquirir Netscape", "description": "Comprá la amenaza. Integrá su navegador a tu ecosistema." },
+            { "key": "C", "label": "Ignorarlo. La web es una moda pasajera.", "description": "Concentrate en Office y Windows. Tu negocio central." }
+          ],
+          "historicalChoice": "A",
+          "outcomes": {
+            "A": { "isHistorical": true,  "headline": "INTERNET EXPLORER. LA GUERRA DE NAVEGADORES COMIENZA.", "narrative": "Construís Internet Explorer y lo incluís gratis con Windows.\nNetscape cobraba $40 por copia. El tuyo es gratis.\nPara 1999, IE tiene el 75% del mercado.\nNetscape está liquidado.\nEl Departamento de Justicia luego lo llamará anticompetitivo.\nPasarás años en los tribunales.\nPero durante una década, sos dueño del portal web\npor el que la mayor parte del mundo accede a internet.\nLa dominación tiene un precio." },
+            "B": { "isHistorical": false, "headline": "LA ADQUISICIÓN QUE NUNCA FUE.", "narrative": "Te acercás a Netscape.\nSe ríen.\nSu capitalización bursátil está por las nubes. ¿Por qué vender?\nOfrecés $4 mil millones. Ellos quieren $7 mil millones.\nLas negociaciones colapsan.\nVolvés a Redmond y empezás a construir un navegador de todos modos.\nMismo resultado — 18 meses después." },
+            "C": { "isHistorical": false, "headline": "MOMENTO KODAK.", "narrative": "Mirás cómo Netscape crece.\nDespués AOL. Después Yahoo. Después Google.\nCada uno extrae valor que bypasea Windows por completo.\nPara 2004, el software más importante del mundo\ncorre en un navegador — uno que vos no controlás.\nLa plataforma que construiste quedó obsoleta\nporque no creíste en la red.\nAsí caen los imperios." }
+          }
+        }
+      ],
+      "profiles": {
+        "high":   { "title": "VISIONARIO DE PLATAFORMAS", "description": "Viste la arquitectura de industrias enteras antes de que existieran.", "gatesSimilarity": 91 },
+        "medium": { "title": "OPERADOR ESTRATÉGICO",     "description": "Buenos instintos. Construís posiciones defendibles.", "gatesSimilarity": 68 },
+        "low":    { "title": "EJECUTIVO CAUTELOSO",       "description": "Aversión al riesgo. Protegés lo que existe en lugar de construir lo que podría ser.", "gatesSimilarity": 34 }
+      },
+      "historicalNote": "Microsoft se convirtió en la empresa más valiosa del mundo — dos veces.\nPrimero en los años 90, de nuevo en los 2020.\nBill Gates dejó el rol de CEO en 2000.\nSatya Nadella tomó el mando en 2014 y reinventó la empresa\nalrededor de la nube y la inteligencia artificial.\nLa capitalización de mercado de Microsoft alcanzó los $3 billones en 2024."
+    }
+  }
 }

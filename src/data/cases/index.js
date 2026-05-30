@@ -16,15 +16,27 @@ export const CASES = [
  * Returns the case data merged with the requested language overlay.
  * Falls back to the base (English) content if no translation exists.
  */
+function mergeDecisions(base, translated) {
+  if (!translated) return base;
+  return translated.map((tDec, idx) => {
+    const baseDec = base[idx] || {};
+    const outcomes = {};
+    for (const key of Object.keys(tDec.outcomes || {})) {
+      outcomes[key] = { ...baseDec.outcomes?.[key], ...tDec.outcomes[key] };
+    }
+    return { ...baseDec, ...tDec, outcomes };
+  });
+}
+
 export function getLocalizedCase(caseData, lang) {
   if (!lang || lang === 'en' || !caseData?.i18n?.[lang]) return caseData;
   const t = caseData.i18n[lang];
   return {
     ...caseData,
-    intro:         t.intro         ?? caseData.intro,
-    decisions:     t.decisions     ?? caseData.decisions,
-    profiles:      t.profiles      ?? caseData.profiles,
-    historicalNote:t.historicalNote ?? caseData.historicalNote,
+    intro:          t.intro          ?? caseData.intro,
+    decisions:      mergeDecisions(caseData.decisions, t.decisions),
+    profiles:       t.profiles       ?? caseData.profiles,
+    historicalNote: t.historicalNote ?? caseData.historicalNote,
   };
 }
 
