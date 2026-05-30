@@ -100,7 +100,7 @@ export function FinalScreen({ caseData, stats, choices, onMenu, soundEnabled }) 
           <div className="final-divider dim">{'─'.repeat(44)}</div>
           <div className="final-similarity">
             SIMILARITY TO {caseData.founders[0]}
-            <span className="final-similarity-val glow"> {profile.gatesSimilarity}%</span>
+            <span className="final-similarity-val glow"> {profile.gatesSimilarity ?? profile.sinegalSimilarity ?? profile.similarity ?? '—'}%</span>
           </div>
         </div>
       )}
