@@ -2,8 +2,9 @@ import { useState, useEffect, useRef } from 'react';
 import { useSound } from '../hooks/useSound';
 
 const BOOT_LINES = [
-  { text: 'CORPORATE ARCHIVES v1.0', delay: 0,    style: 'title' },
-  { text: '(C) 1984 ARCHIVE SYSTEMS INC.', delay: 600,  style: 'dim' },
+  { text: 'FOUNDER v1.0', delay: 0,    style: 'title' },
+  { text: 'A Corporate Archives Experience', delay: 400, style: 'subtitle' },
+  { text: '(C) 1984 ARCHIVE SYSTEMS INC.', delay: 800,  style: 'dim' },
   { text: '', delay: 900, style: 'blank' },
   { text: 'CPU CHECK ........................ OK', delay: 1100, style: 'check' },
   { text: 'MEMORY CHECK ..................... OK', delay: 1400, style: 'check' },
@@ -73,8 +74,9 @@ function BootLine({ line, blink }) {
   if (line.style === 'blank') return <div className="boot-blank" />;
 
   const className = {
-    title:   'boot-title glow-strong',
-    dim:     'boot-dim',
+    title:    'boot-title glow-strong',
+    subtitle: 'boot-subtitle glow',
+    dim:      'boot-dim',
     check:   'boot-check',
     load:    'boot-load',
     bar:     'boot-bar glow',

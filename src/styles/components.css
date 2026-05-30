@@ -25,6 +25,13 @@
   margin-bottom: 2px;
 }
 
+.boot-subtitle {
+  color: var(--amber-dim);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  margin-bottom: 2px;
+}
+
 .boot-dim {
   color: var(--amber-faint);
   font-size: 11px;
@@ -72,8 +79,22 @@
 }
 
 /* ─── Main Menu ───────────────────────────── */
+.menu-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .menu-header {
-  margin-bottom: 24px;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+.menu-access-label {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--amber-faint);
+  margin-bottom: 6px;
 }
 
 .menu-border {
@@ -84,51 +105,75 @@
 
 .menu-title {
   font-family: var(--font-vt);
-  font-size: 32px;
+  font-size: 34px;
   letter-spacing: 0.15em;
   color: var(--amber-bright);
-  text-align: left;
-  padding: 4px 0;
+  padding: 4px 0 0;
 }
 
-.menu-subtitle {
-  color: var(--amber-faint);
+.menu-tagline {
+  color: var(--amber-dim);
   font-size: 11px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   margin-bottom: 4px;
 }
 
-.menu-body {
+/* ── Two-column layout ── */
+.menu-columns {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  min-height: 0;
+}
+
+.menu-list {
+  flex: 1;
+  min-width: 0;
+}
+
+.menu-context {
+  width: 190px;
+  flex-shrink: 0;
+  border-left: 1px solid var(--amber-faint);
+  padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 11px;
+}
+
+.menu-context-inner {
   flex: 1;
 }
 
+.menu-profile-area {
+  margin-top: 8px;
+}
+
 .menu-section-label {
-  color: var(--amber-dim);
-  font-size: 11px;
+  color: var(--amber-faint);
+  font-size: 10px;
   letter-spacing: 0.12em;
   margin-bottom: 8px;
 }
 
-.menu-spacer {
-  height: 12px;
-}
+.menu-spacer { height: 8px; }
 
 .menu-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 5px 8px;
+  gap: 10px;
+  padding: 4px 6px;
   cursor: pointer;
-  transition: background 0.1s;
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: 0.06em;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
   border-left: 2px solid transparent;
+  transition: background 0.08s;
 }
 
-.menu-item:hover:not(.menu-item-locked) {
+.menu-item:hover {
   background: var(--amber-ghost);
-  border-left-color: var(--amber-dim);
 }
 
 .menu-item-selected {
@@ -139,28 +184,24 @@
 }
 
 .menu-item-locked {
-  opacity: 0.35;
-  cursor: default;
+  opacity: 0.3;
 }
 
 .menu-num {
   color: var(--amber-faint);
-  font-size: 12px;
-  min-width: 36px;
+  font-size: 11px;
+  min-width: 32px;
 }
 
-.menu-item-selected .menu-num {
-  color: var(--amber-dim);
-}
+.menu-item-selected .menu-num { color: var(--amber-dim); }
 
-.menu-label {
-  flex: 1;
-}
+.menu-label { flex: 1; }
 
 .menu-locked {
-  font-size: 10px;
+  font-size: 9px;
   color: var(--amber-faint);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
+  opacity: 0.7;
 }
 
 .menu-cursor {
@@ -172,24 +213,82 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-top: 20px;
-  font-size: 14px;
+  margin-top: 12px;
+  font-size: 13px;
 }
 
-.menu-prompt {
-  color: var(--amber-dim);
-}
+.menu-prompt { color: var(--amber-dim); }
 
 .menu-footer {
-  margin-top: 16px;
-  padding-top: 12px;
+  flex-shrink: 0;
+  margin-top: 10px;
+  padding-top: 8px;
   border-top: 1px solid var(--amber-faint);
 }
 
 .menu-hint {
   color: var(--amber-faint);
   font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+/* ── Context panel ── */
+.ctx-label {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: var(--amber-faint);
+  margin-bottom: 4px;
+}
+
+.ctx-divider {
+  color: var(--amber-faint);
+  opacity: 0.4;
+  margin: 5px 0;
+  font-size: 11px;
+}
+
+.ctx-company {
+  font-family: var(--font-vt);
+  font-size: 20px;
   letter-spacing: 0.1em;
+  color: var(--amber-bright);
+  margin-bottom: 4px;
+}
+
+.ctx-row {
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  line-height: 1.8;
+  color: var(--amber-dim);
+}
+
+.ctx-teaser {
+  font-size: 11px;
+  color: var(--amber);
+  line-height: 1.7;
+  margin: 4px 0;
+}
+
+.ctx-locked-msg {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--amber-faint);
+}
+
+.ctx-enter {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--amber-dim);
+  animation: blink 1.4s step-end infinite;
+}
+
+.ctx-unavailable { margin-top: 4px; }
+
+.ctx-profile-empty {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--amber-faint);
+  margin-top: 4px;
 }
 
 /* ─── Case Intro ──────────────────────────── */

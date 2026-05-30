@@ -3,18 +3,62 @@
    Retro CRT Terminal Aesthetic
    ═══════════════════════════════════════════ */
 
+/* ── Theme: Amber (default) ─────────────── */
+:root,
+[data-theme="amber"] {
+  --c:        #ffb000;
+  --c-bright: #ffc84a;
+  --c-dim:    #cc8800;
+  --c-faint:  #664400;
+  --c-ghost:  #331e00;
+  --black:    #000000;
+  --dark:     #080400;
+  --glow:       0 0 8px #ffb000aa, 0 0 20px #ffb00055, 0 0 40px #ffb00022;
+  --glow-strong:0 0 4px #ffb000,   0 0 12px #ffb000cc, 0 0 30px #ffb00077;
+  --border-color: #664400;
+  --scanline-color: rgba(0,0,0,0.15);
+}
+
+/* ── Theme: Green phosphor ──────────────── */
+[data-theme="green"] {
+  --c:        #00e84a;
+  --c-bright: #39ff7a;
+  --c-dim:    #00b83a;
+  --c-faint:  #005c1d;
+  --c-ghost:  #002610;
+  --black:    #000000;
+  --dark:     #000a03;
+  --glow:       0 0 8px #00e84aaa, 0 0 20px #00e84a55, 0 0 40px #00e84a22;
+  --glow-strong:0 0 4px #00e84a,   0 0 12px #00e84acc, 0 0 30px #00e84a77;
+  --border-color: #005c1d;
+  --scanline-color: rgba(0,0,0,0.18);
+}
+
+/* ── Theme: Mono (white on black) ───────── */
+[data-theme="mono"] {
+  --c:        #c8c8c8;
+  --c-bright: #ffffff;
+  --c-dim:    #909090;
+  --c-faint:  #484848;
+  --c-ghost:  #1a1a1a;
+  --black:    #000000;
+  --dark:     #040404;
+  --glow:       0 0 6px #ffffff55, 0 0 14px #ffffff22;
+  --glow-strong:0 0 4px #ffffffaa, 0 0 10px #ffffff66;
+  --border-color: #484848;
+  --scanline-color: rgba(0,0,0,0.12);
+}
+
 :root {
-  --amber: #ffb000;
-  --amber-bright: #ffc84a;
-  --amber-dim: #cc8800;
-  --amber-faint: #664400;
-  --amber-ghost: #331e00;
-  --black: #000000;
-  --dark: #080400;
-  --glow: 0 0 8px #ffb000aa, 0 0 20px #ffb00055, 0 0 40px #ffb00022;
-  --glow-strong: 0 0 4px #ffb000, 0 0 12px #ffb000cc, 0 0 30px #ffb00077;
   --font-mono: 'Share Tech Mono', 'Courier New', monospace;
   --font-vt: 'VT323', monospace;
+
+  /* alias — keep component styles using var(--amber-*) working */
+  --amber:       var(--c);
+  --amber-bright:var(--c-bright);
+  --amber-dim:   var(--c-dim);
+  --amber-faint: var(--c-faint);
+  --amber-ghost: var(--c-ghost);
 }
 
 *,
@@ -74,8 +118,8 @@ body {
     0deg,
     transparent,
     transparent 2px,
-    rgba(0, 0, 0, 0.15) 2px,
-    rgba(0, 0, 0, 0.15) 4px
+    var(--scanline-color) 2px,
+    var(--scanline-color) 4px
   );
   pointer-events: none;
   z-index: 20;
@@ -86,11 +130,11 @@ body {
   width: min(900px, 96vw);
   height: min(640px, 94vh);
   background: var(--dark);
-  border: 2px solid var(--amber-faint);
+  border: 2px solid var(--border-color);
   box-shadow:
     0 0 0 1px #000,
-    0 0 20px #ffb00033,
-    0 0 60px #ffb00011,
+    0 0 20px color-mix(in srgb, var(--c) 20%, transparent),
+    0 0 60px color-mix(in srgb, var(--c) 7%, transparent),
     inset 0 0 60px rgba(0,0,0,0.5);
   position: relative;
   overflow: hidden;

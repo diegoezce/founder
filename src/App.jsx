@@ -1,7 +1,7 @@
-import { useReducer, useCallback, useState } from 'react';
+import { useReducer, useCallback, useState, useEffect } from 'react';
 import { reducer, createInitialState, SCREENS } from './engine/gameEngine';
 import { getCaseById } from './data/cases/index';
-import { parseCommand, HELP_TEXT } from './engine/commandParser';
+import { HELP_TEXT } from './engine/commandParser';
 
 import { BootSequence }   from './components/BootSequence';
 import { MainMenu }       from './components/MainMenu';
@@ -14,11 +14,25 @@ import { PlayerStats }    from './components/PlayerStats';
 import './styles/global.css';
 import './styles/components.css';
 
+const THEMES = ['amber', 'green', 'mono'];
+
 export default function App() {
   const [state,    dispatch] = useReducer(reducer, createInitialState());
   const [cmdMode,  setCmdMode]    = useState(false);
   const [cmdHistory, setCmdHistory] = useState([]);
   const [showStats, setShowStats]   = useState(false);
+  const [theme, setTheme] = useState(
+    () => localStorage.getItem('founder-theme') || 'amber'
+  );
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('founder-theme', theme);
+  }, [theme]);
+
+  const cycleTheme = useCallback(() => {
+    setTheme(t => THEMES[(THEMES.indexOf(t) + 1) % THEMES.length]);
+  }, []);
 
   const caseData = state.currentCase ? getCaseById(state.currentCase) : null;
   const decision = caseData
@@ -116,7 +130,7 @@ export default function App() {
 
   const statusLeft  = state.currentCase
     ? `CASE: ${caseData?.name || '---'}`
-    : 'CORPORATE ARCHIVES v1.0';
+    : 'FOUNDER v1.0';
   const statusRight = `${new Date().toTimeString().slice(0, 8)} | SND:${state.soundEnabled ? 'ON' : 'OFF'} | ${cmdMode ? 'CMD' : 'GUI'}`;
 
   return (
@@ -136,6 +150,7 @@ export default function App() {
             onSelectCase={(id) => dispatch({ type: 'SELECT_CASE', payload: id })}
             soundEnabled={state.soundEnabled}
             onToggleSound={toggleSound}
+            onCycleTheme={cycleTheme}
           />
         )}
 
@@ -204,8 +219,11 @@ export default function App() {
           <span className="status-bar-item status-center">
             {state.screen !== SCREENS.BOOT && (
               <>
-                <span className="status-btn" onClick={toggleSound} title="Toggle sound">
+                <span className="status-btn" onClick={toggleSound} title="Toggle sound [S]">
                   [SND]
+                </span>
+                <span className="status-btn" onClick={cycleTheme} title="Cycle theme [T]">
+                  [{theme.toUpperCase()}]
                 </span>
                 <span className="status-btn" onClick={toggleCmd} title="Terminal mode">
                   [CMD]
