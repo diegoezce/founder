@@ -25,13 +25,24 @@ export function useTypingEffect(lines, { speed = 28, lineDelay = 120, onComplete
       // Pause before each line
       cumulativeDelay += lineIdx === 0 ? 0 : lineDelay;
 
+      // Empty lines: set immediately at their scheduled delay
+      if (chars.length === 0) {
+        const t = setTimeout(() => {
+          setDisplayed(prev => {
+            const next = [...prev];
+            next[lineIdx] = '';
+            return next;
+          });
+        }, cumulativeDelay);
+        timeoutsRef.current.push(t);
+      }
+
       // Reveal characters one by one
       chars.forEach((_, charIdx) => {
         const delay = cumulativeDelay + charIdx * speed;
         const t = setTimeout(() => {
           setDisplayed(prev => {
             const next = [...prev];
-            if (!next[lineIdx]) next[lineIdx] = '';
             next[lineIdx] = String(line).slice(0, charIdx + 1);
             return next;
           });

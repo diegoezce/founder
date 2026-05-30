@@ -53,6 +53,7 @@ export function ResultScreen({ decision, choice, onNext, isLast, soundEnabled })
 
       <div className="result-body">
         {displayed.map((line, i) => {
+          if (line == null) return null;
           const isLabel   = line === 'YOUR DECISION:' || line === 'HISTORICAL DECISION:';
           const isOutcome = line.startsWith('OUTCOME —');
           const isDivider = line === '─'.repeat(44);
