@@ -1,0 +1,374 @@
+{
+  "id": "ferrari",
+  "name": "FERRARI",
+  "founded": 1947,
+  "founders": ["ENZO FERRARI"],
+  "headquarters": "MARANELLO, ITALY",
+  "sector": "AUTOMOTIVE / LUXURY",
+  "classification": "CASE FILE #003",
+  "clearanceLevel": "OMEGA",
+
+  "intro": {
+    "year": 1947,
+    "location": "MARANELLO, ITALY",
+    "status": "RACING OPERATION, POST-WAR STARTUP",
+    "employees": 9,
+    "revenue": "PRE-REVENUE",
+    "narrative": [
+      "Maranello, 1947.",
+      "Enzo Ferrari is 49 years old, broke, and obsessed.",
+      "Not with business — with racing.",
+      "He spent the war making machine tools to survive.",
+      "The Allied bombs fell close enough to rattle the factory walls.",
+      "Now the war is over and the non-compete with Alfa Romeo has expired.",
+      "He wants only one thing: to build cars that win on the track.",
+      "There is one problem.",
+      "Racing costs money.",
+      "And Enzo Ferrari has almost none of it.",
+      "He has a name, a factory, and a dangerous vision.",
+      "What he does with them will define a century."
+    ]
+  },
+
+  "decisions": [
+    {
+      "id": "decision_1",
+      "year": 1947,
+      "location": "MARANELLO, ITALY",
+      "title": "Il Commendatore's Gamble",
+      "situation": "Enzo Ferrari has just broken free from Alfa Romeo.\nHe has a small factory in Maranello and one consuming ambition: to race.\nBut running a Grand Prix team costs more money than a former driver can generate alone.\nHis chief engineer lays out three paths to fund the operation.\nEach has a different cost — and a different future.",
+      "question": "How does Enzo Ferrari fund his racing program?",
+      "funFact": "Enzo Ferrari never drove any of the road cars his company sold to the public. He also had no road driver's license. He created one of history's greatest luxury brands while genuinely despising the concept.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Build and sell road cars under the Ferrari name",
+          "description": "Use road car revenue to fund the racing program. Every lira earned goes back to the track."
+        },
+        {
+          "key": "B",
+          "label": "Operate as a pure racing team seeking corporate sponsors",
+          "description": "Stay pure. Let someone else fund the dream."
+        },
+        {
+          "key": "C",
+          "label": "License the Ferrari name to an established manufacturer",
+          "description": "Let Alfa Romeo or Fiat build 'Ferrari-branded' road cars. Enzo focuses on racing."
+        }
+      ],
+      "historicalChoice": "A",
+      "outcomes": {
+        "A": {
+          "isHistorical": true,
+          "headline": "THE NECESSARY EVIL BECOMES THE EMPIRE.",
+          "narrative": "Enzo called road cars 'il male necessario' — the necessary evil.\nHe meant it as a complaint. He never stopped resenting them.\nBut the 125 S, the first Ferrari road car, left the factory in 1947,\nand every lira it generated went straight to the racing program.\nWhat Enzo never admitted — perhaps never fully understood —\nis that by insisting on building road cars himself, in his own factory,\nwith the same obsession he brought to the track,\nhe was accidentally building the most powerful luxury brand in automotive history.",
+          "statsDelta": { "vision": 3, "risk": 2, "leadership": 2, "discipline": 2, "innovation": 3 }
+        },
+        "B": {
+          "isHistorical": false,
+          "headline": "RACING ON SOMEONE ELSE'S TERMS.",
+          "narrative": "Corporate sponsorship is a dependency.\nToday's backer is next year's budget cut.\nSponsors want race wins on a schedule.\nEnzo wants to build the perfect car on his own timeline.\nThese two things are incompatible.\nWithout the economic foundation of road car sales,\nScuderia Ferrari becomes one more team celebrating other people's logos on the podium —\nand disappears when the sponsors move on.",
+          "statsDelta": { "vision": -2, "risk": -1, "leadership": -1, "discipline": 1, "innovation": -1 }
+        },
+        "C": {
+          "isHistorical": false,
+          "headline": "THE NAME WITHOUT THE SOUL.",
+          "narrative": "A licensed Ferrari is not a Ferrari.\nAnother manufacturer's engineers, priorities, and cost targets\nwould hollow out the name before it meant anything.\nThe mystique of Ferrari comes from one fact:\nevery car was built by one man's obsession in one factory in Maranello.\nLicensing the name is licensing away the story.\nAnd the story is the only thing worth owning.",
+          "statsDelta": { "vision": -3, "risk": -2, "leadership": -2, "discipline": 0, "innovation": -2 }
+        }
+      }
+    },
+    {
+      "id": "decision_2",
+      "year": 1969,
+      "location": "MARANELLO, ITALY",
+      "title": "The Agnelli Card",
+      "situation": "June 1969. Enzo Ferrari is 71 years old, suffering from kidney disease, and running out of time.\nLabor strikes have paralyzed the factory. US safety regulations are choking export revenue.\nSix years earlier, Enzo had walked away from an $18 million Ford buyout offer at the last minute —\ncalling it an insult — and Ford built the GT40 specifically to humiliate Ferrari at Le Mans.\nIt worked. Four consecutive Le Mans victories for Ford. The humiliation is total.\nNow Gianni Agnelli — the most powerful industrialist in Italy — is on the phone.\nFiat will buy 50% of Ferrari, valuing the entire company at just $6.8 million.\nThe condition: Enzo retains complete, unconditional control of Scuderia Ferrari.",
+      "question": "Ferrari is on the brink. How does Enzo save it?",
+      "funFact": "Fiat paid $3.4 million for 50% of Ferrari in 1969. When Ferrari listed on the NYSE in 2015 under the ticker RACE, the company was valued at over $9 billion. That stake returned more than 1,300x.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Accept Fiat's offer — 50% stake, keep full racing control",
+          "description": "Take the industrial capital. Protect the only thing that matters."
+        },
+        {
+          "key": "B",
+          "label": "Sell to Ford — maximum capital, no conditions",
+          "description": "Ford will pay far more. Full resources of an American giant."
+        },
+        {
+          "key": "C",
+          "label": "Reject all buyers — cut the racing program, survive on road cars alone",
+          "description": "Stay fully independent. Become just a car company."
+        }
+      ],
+      "historicalChoice": "A",
+      "outcomes": {
+        "A": {
+          "isHistorical": true,
+          "headline": "FIAT BUYS THE FACTORY. ENZO KEEPS THE SOUL.",
+          "narrative": "The deal Enzo struck was surgical.\nFiat got the manufacturing headaches, labor negotiations, and regulatory paperwork.\nEnzo got to keep Scuderia Ferrari completely under his own authority.\nFiat's capital stabilized production and funded engineering.\nEnzo's racing obsession kept the brand mythic.\nThe two halves needed each other.\nWhen Enzo died in 1988, Fiat rose to 90%.\nPiero Ferrari — Enzo's illegitimate son — kept the remaining 10%.\nHe still holds it today.",
+          "statsDelta": { "vision": 3, "risk": 1, "leadership": 3, "discipline": 2, "innovation": 2 }
+        },
+        "B": {
+          "isHistorical": false,
+          "headline": "HENRY FORD II GETS HIS REVENGE.",
+          "narrative": "Enzo walked away from Ford in 1963 because they wanted control of the racing.\nSelling to Ford now — under duress — is the same deal at worse terms.\nFord wants Le Mans wins and Ferrari showrooms in Detroit.\nEnzo wants to build the perfect car in Maranello and race it.\nThese objectives are not compatible.\nUnder Ford ownership, Ferrari becomes a premium division.\nA brand. A product line. Not a philosophy.\nThe mystique evaporates the moment the org chart changes.",
+          "statsDelta": { "vision": -2, "risk": 1, "leadership": -3, "discipline": 1, "innovation": -1 }
+        },
+        "C": {
+          "isHistorical": false,
+          "headline": "INDEPENDENCE WITHOUT RACING IS JUST A FACTORY.",
+          "narrative": "A Ferrari that exits Formula 1 is a company that has lost its reason to exist.\nThe road cars sell because of the racing.\nThe racing is what makes the brand aspirational.\nWithout the track, Ferrari is an expensive Italian sports car —\nand the world already has enough of those.\nThe waiting lists disappear. So does the premium.",
+          "statsDelta": { "vision": -3, "risk": -2, "leadership": -2, "discipline": 2, "innovation": -3 }
+        }
+      }
+    },
+    {
+      "id": "decision_3",
+      "year": 1991,
+      "location": "MARANELLO, ITALY",
+      "title": "The Restoration",
+      "situation": "Enzo Ferrari died in 1988 at 90 years old, arriving at the factory until the end.\nHis passing exposed every problem his force of personality had masked.\nThrough the 1980s, Ferrari inflated production chasing revenue:\nfrom 3,000 units to 4,700 a year.\nThe Testarossa became a Miami Vice prop. The brand lost its distance.\nFerrari hasn't won the F1 constructors' championship since 1983.\nGianni Agnelli recalls Luca di Montezemolo — 44 years old,\nthe man who fixed Ferrari's F1 operation in the 1970s — and gives him total authority.\nThe question is which lever to pull first.",
+      "question": "How does Luca di Montezemolo restore Ferrari?",
+      "funFact": "Between 1999 and 2004, Ferrari won 6 consecutive constructors' championships and Michael Schumacher won 5 consecutive drivers' titles. The team Montezemolo assembled — Schumacher, Jean Todt, Ross Brawn — became the most dominant in F1 history.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Cut production and build the greatest F1 team in history",
+          "description": "Restore scarcity. Hire Schumacher, Todt, and Brawn. Go all in on the track."
+        },
+        {
+          "key": "B",
+          "label": "Maintain volume, use revenue to fund gradual F1 recovery",
+          "description": "Financial stability first, then glory."
+        },
+        {
+          "key": "C",
+          "label": "Exit Formula 1 entirely, focus on road car excellence",
+          "description": "F1 is expensive and distracting. Become the world's finest road car company."
+        }
+      ],
+      "historicalChoice": "A",
+      "outcomes": {
+        "A": {
+          "isHistorical": true,
+          "headline": "SCARCITY IS THE STRATEGY. SCHUMACHER IS THE WEAPON.",
+          "narrative": "Montezemolo cut production immediately — from 4,700 to roughly 3,900 units.\nFewer cars. Longer waiting lists. Higher prices.\nThen he assembled the most formidable Formula 1 operation ever built:\nMichael Schumacher signed in 1996. Jean Todt ran the team. Ross Brawn ran the engineering.\nBy 1999, Ferrari won its first constructors' championship in 16 years.\nThen again. 2000. 2001. 2002. 2003. 2004.\nWhen Ferrari listed on the NYSE in 2015 under the ticker RACE,\ninvestors finally saw what Luca had built:\nan EBITDA margin of 38% — higher than Apple — and a waiting list measured in years.",
+          "statsDelta": { "vision": 3, "risk": 2, "leadership": 3, "discipline": 3, "innovation": 2 }
+        },
+        "B": {
+          "isHistorical": false,
+          "headline": "GRADUAL RECOVERY IS NO RECOVERY AT ALL.",
+          "narrative": "High volume keeps the revenue stable.\nIt also keeps the brand diluted.\nA Ferrari that anyone can buy is not a Ferrari.\nAnd a racing team funded by the leftovers of a volume production model\nnever attracts the talent or investment needed to win.\nGradual recovery in Formula One means gradual irrelevance.\nThe window for Schumacher, Todt, and Brawn closes.\nThey go elsewhere. So does the championship.",
+          "statsDelta": { "vision": -2, "risk": 0, "leadership": -2, "discipline": 1, "innovation": -1 }
+        },
+        "C": {
+          "isHistorical": false,
+          "headline": "A FERRARI WITHOUT F1 IS JUST A FAST CAR.",
+          "narrative": "The road cars benefit from racing in ways that don't show up on a spreadsheet.\nEvery aerodynamic lesson from the track becomes a road car feature.\nEvery race weekend is a global marketing event you cannot buy.\nExiting F1 to 'focus on road cars' removes the engine that makes the road cars special.\nFerrari without Formula One is a car company.\nCar companies compete on price.\nThat is not a competition Ferrari can win.",
+          "statsDelta": { "vision": -3, "risk": -1, "leadership": -1, "discipline": 2, "innovation": -2 }
+        }
+      }
+    }
+  ],
+
+  "profiles": {
+    "high": {
+      "title": "IL COMMENDATORE",
+      "description": "You made the same calls Enzo made. You understood that a brand built on obsession — not strategy — is the one that endures. Racing funds the road cars. Scarcity funds the racing. The circle holds.",
+      "similarity": 89
+    },
+    "medium": {
+      "title": "THE PRAGMATIC ENGINEER",
+      "description": "Sound decisions, but you hedged where Enzo never would. Your Ferrari exists and wins races — but it's missing the dangerous conviction that made the original irreplaceable.",
+      "similarity": 58
+    },
+    "low": {
+      "title": "THE PRODUCTION MANAGER",
+      "description": "You kept the factory running. That's not nothing. But Ferrari's value was never in the factory — it was in the controlled scarcity and the racing obsession that made every car mythic.",
+      "similarity": 24
+    }
+  },
+
+  "historicalNote": "Enzo Ferrari died on August 14, 1988, at the age of 90, arriving at the factory until the end.\nThe company he built to fund his racing habit became the most profitable automotive brand per unit in history.\nUnder Luca di Montezemolo's leadership from 1991 to 2014, Ferrari won 14 constructors' championships\nand defined an era of dominance with Michael Schumacher.\nWhen Ferrari separated from Fiat Chrysler and listed on the NYSE in 2015 under the ticker RACE,\nit was valued at over $9 billion — more than 1,300 times what Fiat paid for 50% in 1969.\nToday Ferrari produces approximately 13,500 cars per year,\nmaintains EBITDA margins above 38%, has a market capitalization\nlarger than Ford and GM combined,\nand operates by the principle Enzo established in 1947:\n'We will always sell one car less than the market demands.'",
+
+  "i18n": {
+    "es": {
+      "intro": {
+        "year": 1947,
+        "location": "MARANELLO, ITALIA",
+        "status": "OPERACIÓN DE CARRERAS, STARTUP DE POSGUERRA",
+        "employees": 9,
+        "revenue": "PRE-REVENUE",
+        "narrative": [
+          "Maranello, 1947.",
+          "Enzo Ferrari tiene 49 años, está en bancarrota y obsesionado.",
+          "No con los negocios — con las carreras.",
+          "Pasó la guerra fabricando herramientas para sobrevivir.",
+          "Las bombas aliadas cayeron lo suficientemente cerca como para sacudir las paredes de la fábrica.",
+          "Ahora la guerra terminó y el acuerdo de no competencia con Alfa Romeo venció.",
+          "Solo quiere una cosa: construir autos que ganen en la pista.",
+          "Hay un problema.",
+          "Las carreras cuestan dinero.",
+          "Y Enzo Ferrari casi no tiene.",
+          "Tiene un nombre, una fábrica y una visión peligrosa.",
+          "Lo que haga con ellos definirá un siglo."
+        ]
+      },
+      "decisions": [
+        {
+          "id": "decision_1",
+          "year": 1947,
+          "location": "MARANELLO, ITALIA",
+          "title": "La Apuesta del Commendatore",
+          "situation": "Enzo Ferrari acaba de separarse de Alfa Romeo.\nTiene una pequeña fábrica en Maranello y una ambición consumidora: correr.\nPero dirigir un equipo de Gran Premio cuesta más de lo que un ex piloto puede generar solo.\nSu ingeniero jefe le propone tres caminos para financiar la operación.\nCada uno tiene un costo diferente — y un futuro diferente.",
+          "question": "¿Cómo financia Enzo Ferrari su programa de carreras?",
+          "funFact": "Enzo Ferrari nunca manejó ninguno de los autos de calle que su empresa vendió al público. Tampoco tenía licencia de conducir. Creó una de las marcas de lujo más poderosas de la historia mientras genuinamente despreciaba el concepto.",
+          "options": [
+            {
+              "key": "A",
+              "label": "Construir y vender autos de calle bajo la marca Ferrari",
+              "description": "Usar los ingresos de los autos de calle para financiar el programa de carreras. Cada lira ganada vuelve a la pista."
+            },
+            {
+              "key": "B",
+              "label": "Operar como equipo de carreras puro buscando sponsors corporativos",
+              "description": "Mantenerse puro. Dejar que otros financien el sueño."
+            },
+            {
+              "key": "C",
+              "label": "Licenciar el nombre Ferrari a un fabricante establecido",
+              "description": "Dejar que Alfa Romeo o Fiat construyan autos 'marca Ferrari'. Enzo se enfoca en correr."
+            }
+          ],
+          "historicalChoice": "A",
+          "outcomes": {
+            "A": {
+              "isHistorical": true,
+              "headline": "EL MAL NECESARIO SE CONVIERTE EN EL IMPERIO.",
+              "narrative": "Enzo llamaba a los autos de calle 'il male necessario' — el mal necesario.\nLo decía como queja. Nunca dejó de resentirlos.\nPero el 125 S, el primer auto de calle Ferrari, salió de la fábrica en 1947,\ny cada lira que generó fue directo al programa de carreras.\nLo que Enzo nunca admitió — quizás nunca entendió del todo —\nes que al insistir en construir autos de calle él mismo, en su propia fábrica,\ncon la misma obsesión que le traía a la pista,\nestaba construyendo accidentalmente la marca de lujo más poderosa de la historia automotriz."
+            },
+            "B": {
+              "isHistorical": false,
+              "headline": "CORRER EN LOS TÉRMINOS DE OTRO.",
+              "narrative": "El sponsoreo corporativo es una dependencia.\nEl patrocinador de hoy es el recorte de presupuesto del año que viene.\nLos sponsors quieren victorias según un calendario.\nEnzo quiere construir el auto perfecto en su propio tiempo.\nEstas dos cosas son incompatibles.\nSin la base económica de las ventas de autos de calle,\nla Scuderia Ferrari se convierte en un equipo más celebrando los logos de otros en el podio —\ny desaparece cuando los sponsors se van."
+            },
+            "C": {
+              "isHistorical": false,
+              "headline": "EL NOMBRE SIN EL ALMA.",
+              "narrative": "Un Ferrari con licencia no es un Ferrari.\nLos ingenieros, las prioridades y los objetivos de costo de otro fabricante\nvaciaron el nombre antes de que significara algo.\nEl misticismo de Ferrari viene de un solo hecho:\ncada auto fue construido por la obsesión de un hombre en una fábrica en Maranello.\nLicenciar el nombre es ceder la historia.\nY la historia es lo único que vale la pena poseer."
+            }
+          }
+        },
+        {
+          "id": "decision_2",
+          "year": 1969,
+          "location": "MARANELLO, ITALIA",
+          "title": "La Carta Agnelli",
+          "situation": "Junio de 1969. Enzo Ferrari tiene 71 años, sufre enfermedad renal y se le acaba el tiempo.\nLas huelgas laborales han paralizado la fábrica. Las regulaciones de seguridad en EE.UU. asfixian los ingresos de exportación.\nSeis años antes, Enzo había rechazado una oferta de compra de Ford de $18 millones en el último momento —\nllamándola un insulto — y Ford construyó el GT40 específicamente para humillar a Ferrari en Le Mans.\nFuncionó. Cuatro victorias consecutivas de Ford. La humillación fue total.\nAhora Gianni Agnelli — el industrial más poderoso de Italia — está al teléfono.\nFiat comprará el 50% de Ferrari, valuando toda la empresa en apenas $6,8 millones.\nLa condición: Enzo conserva el control completo e incondicional de la Scuderia Ferrari.",
+          "question": "Ferrari está al borde del abismo. ¿Cómo lo salva Enzo?",
+          "funFact": "Fiat pagó $3,4 millones por el 50% de Ferrari en 1969. Cuando Ferrari cotizó en NYSE en 2015 con el ticker RACE, la empresa fue valuada en más de $9 mil millones. Esa participación se revalorizó más de 1.300 veces.",
+          "options": [
+            {
+              "key": "A",
+              "label": "Aceptar la oferta de Fiat — 50% de participación, conservar el control total de las carreras",
+              "description": "Tomar el capital industrial. Proteger lo único que importa."
+            },
+            {
+              "key": "B",
+              "label": "Vender a Ford — máximo capital, sin condiciones",
+              "description": "Ford pagará mucho más. Recursos completos de un gigante americano."
+            },
+            {
+              "key": "C",
+              "label": "Rechazar a todos los compradores — recortar las carreras, sobrevivir solo con autos de calle",
+              "description": "Mantenerse completamente independiente. Convertirse en solo una fábrica de autos."
+            }
+          ],
+          "historicalChoice": "A",
+          "outcomes": {
+            "A": {
+              "isHistorical": true,
+              "headline": "FIAT COMPRA LA FÁBRICA. ENZO CONSERVA EL ALMA.",
+              "narrative": "El acuerdo que hizo Enzo fue quirúrgico.\nFiat se llevó los dolores de cabeza industriales, las negociaciones laborales y el papeleo regulatorio.\nEnzo conservó la Scuderia Ferrari completamente bajo su propia autoridad.\nEl capital de Fiat estabilizó la producción y financió la ingeniería.\nLa obsesión de Enzo por las carreras mantuvo la marca mítica.\nLas dos mitades se necesitaban.\nCuando Enzo murió en 1988, Fiat subió al 90%.\nPiero Ferrari — el hijo ilegítimo de Enzo — conservó el 10% restante.\nTodavía lo tiene hoy."
+            },
+            "B": {
+              "isHistorical": false,
+              "headline": "HENRY FORD II OBTIENE SU REVANCHA.",
+              "narrative": "Enzo rechazó a Ford en 1963 porque querían el control de las carreras.\nVenderle a Ford ahora — bajo presión — es el mismo acuerdo en peores términos.\nFord quiere victorias en Le Mans y concesionarios Ferrari en Detroit.\nEnzo quiere construir el auto perfecto en Maranello y correrlo.\nEstos objetivos no son compatibles.\nBajo la propiedad de Ford, Ferrari se convierte en una división premium.\nUna marca. Una línea de productos. No una filosofía.\nEl misticismo se evapora en el momento en que cambia el organigrama."
+            },
+            "C": {
+              "isHistorical": false,
+              "headline": "INDEPENDENCIA SIN CARRERAS ES SOLO UNA FÁBRICA.",
+              "narrative": "Un Ferrari que sale de la Fórmula 1 es una empresa que perdió su razón de existir.\nLos autos de calle se venden gracias a las carreras.\nLas carreras son lo que hace aspiracional a la marca.\nSin la pista, Ferrari es un auto italiano caro —\ny el mundo ya tiene suficientes de esos.\nLas listas de espera desaparecen. El premium también."
+            }
+          }
+        },
+        {
+          "id": "decision_3",
+          "year": 1991,
+          "location": "MARANELLO, ITALIA",
+          "title": "La Restauración",
+          "situation": "Enzo Ferrari murió en 1988 a los 90 años, llegando a la fábrica hasta el final.\nSu partida expuso cada problema que la fuerza de su personalidad había enmascarado.\nDurante los 80, Ferrari infló la producción persiguiendo ingresos:\nde 3.000 unidades a 4.700 por año.\nEl Testarossa se convirtió en un cliché de Miami Vice. La marca perdió su distancia.\nFerrari no gana el campeonato de constructores de F1 desde 1983.\nGianni Agnelli convoca a Luca di Montezemolo — 44 años,\nel hombre que arregló la operación de F1 de Ferrari en los 70 — y le da autoridad total.\nLa pregunta es qué palanca mover primero.",
+          "question": "¿Cómo restaura Luca di Montezemolo a Ferrari?",
+          "funFact": "Entre 1999 y 2004, Ferrari ganó 6 campeonatos de constructores consecutivos y Michael Schumacher ganó 5 títulos de pilotos consecutivos. El equipo que armó Montezemolo — Schumacher, Jean Todt, Ross Brawn — se convirtió en el más dominante de la historia de la F1.",
+          "options": [
+            {
+              "key": "A",
+              "label": "Recortar producción y construir el mejor equipo de F1 de la historia",
+              "description": "Restaurar la escasez. Contratar a Schumacher, Todt y Brawn. Apostar todo a la pista."
+            },
+            {
+              "key": "B",
+              "label": "Mantener el volumen, usar los ingresos para una recuperación gradual en F1",
+              "description": "Primero estabilidad financiera, después gloria."
+            },
+            {
+              "key": "C",
+              "label": "Salir de la Fórmula 1, enfocarse en la excelencia de los autos de calle",
+              "description": "La F1 es cara y distrae. Convertirse en la mejor empresa de autos de calle del mundo."
+            }
+          ],
+          "historicalChoice": "A",
+          "outcomes": {
+            "A": {
+              "isHistorical": true,
+              "headline": "LA ESCASEZ ES LA ESTRATEGIA. SCHUMACHER ES EL ARMA.",
+              "narrative": "Montezemolo recortó la producción de inmediato — de 4.700 a unas 3.900 unidades.\nMenos autos. Listas de espera más largas. Precios más altos.\nLuego armó la operación de Fórmula 1 más formidable jamás construida:\nMichael Schumacher firmó en 1996. Jean Todt dirigió el equipo. Ross Brawn dirigió la ingeniería.\nEn 1999, Ferrari ganó su primer campeonato de constructores en 16 años.\nLuego de nuevo. 2000. 2001. 2002. 2003. 2004.\nCuando Ferrari cotizó en NYSE en 2015 con el ticker RACE,\nlos inversores finalmente vieron lo que Luca había construido:\nun margen EBITDA del 38% — más alto que Apple — y una lista de espera medida en años."
+            },
+            "B": {
+              "isHistorical": false,
+              "headline": "LA RECUPERACIÓN GRADUAL NO ES RECUPERACIÓN.",
+              "narrative": "El alto volumen mantiene los ingresos estables.\nTambién mantiene la marca diluida.\nUn Ferrari que cualquiera puede comprar no es un Ferrari.\nY un equipo de carreras financiado con las sobras de un modelo de producción en volumen\nnunca atrae el talento ni la inversión necesaria para ganar.\nLa recuperación gradual en la Fórmula Uno significa irrelevancia gradual.\nLa ventana para Schumacher, Todt y Brawn se cierra.\nEllos van a otro lado. El campeonato también."
+            },
+            "C": {
+              "isHistorical": false,
+              "headline": "UN FERRARI SIN F1 ES SOLO UN AUTO RÁPIDO.",
+              "narrative": "Los autos de calle se benefician de las carreras de maneras que no aparecen en una hoja de cálculo.\nCada lección aerodinámica de la pista se convierte en una característica del auto de calle.\nCada fin de semana de carrera es un evento de marketing global que no se puede comprar.\nSalir de la F1 para 'enfocarse en los autos de calle' elimina el motor que hace especiales a los autos de calle.\nFerrari sin la Fórmula Uno es una empresa de autos.\nLas empresas de autos compiten por precio.\nEsa no es una competencia que Ferrari pueda ganar."
+            }
+          }
+        }
+      ],
+      "profiles": {
+        "high": {
+          "title": "IL COMMENDATORE",
+          "description": "Tomaste las mismas decisiones que Enzo. Entendiste que una marca construida sobre la obsesión — no la estrategia — es la que perdura. Las carreras financian los autos de calle. La escasez financia las carreras. El círculo se sostiene.",
+          "similarity": 89
+        },
+        "medium": {
+          "title": "EL INGENIERO PRAGMÁTICO",
+          "description": "Decisiones sólidas, pero cediste donde Enzo nunca lo haría. Tu Ferrari existe y gana carreras — pero le falta la convicción peligrosa que hizo al original irremplazable.",
+          "similarity": 58
+        },
+        "low": {
+          "title": "EL GERENTE DE PRODUCCIÓN",
+          "description": "Mantuviste la fábrica en marcha. No es poca cosa. Pero el valor de Ferrari nunca estuvo en la fábrica — estuvo en la escasez controlada y la obsesión por las carreras que hacía mítico cada auto.",
+          "similarity": 24
+        }
+      },
+      "historicalNote": "Enzo Ferrari murió el 14 de agosto de 1988, a los 90 años, llegando a la fábrica hasta el final.\nLa empresa que construyó para financiar su pasión por las carreras se convirtió en la marca automotriz\nmás rentable por unidad en la historia.\nBajo el liderazgo de Luca di Montezemolo de 1991 a 2014,\nFerrari ganó 14 campeonatos de constructores y definió una era con Michael Schumacher.\nCuando Ferrari se separó de Fiat Chrysler y cotizó en el NYSE en 2015 con el ticker RACE,\nfue valuada en más de $9 mil millones — más de 1.300 veces lo que Fiat pagó por el 50% en 1969.\nHoy Ferrari produce aproximadamente 13.500 autos por año,\nmantiene márgenes EBITDA superiores al 38%, tiene una capitalización bursátil\nmayor a la de Ford y GM combinados,\ny opera bajo el principio que Enzo estableció en 1947:\n'Siempre venderemos un auto menos de lo que el mercado demanda.'"
+    }
+  }
+}

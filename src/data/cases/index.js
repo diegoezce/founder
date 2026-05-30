@@ -1,9 +1,11 @@
 import microsoft from './microsoft.json';
 import costco    from './costco.json';
+import ferrari   from './ferrari.json';
 
 export const CASES = [
   microsoft,
   costco,
+  ferrari,
   // import amazon   from './amazon.json';
   // import cocacola from './cocacola.json';
   // import nike     from './nike.json';
@@ -52,6 +54,12 @@ export const CASE_MENU = [
     year: 1983, location: 'SAN DIEGO, CA',
     teaser: 'A warehouse concept that breaks\nevery rule of retail.',
     playtime: '10-15 MIN', difficulty: 2,
+  },
+  {
+    id: 'ferrari', label: 'FERRARI', available: true,
+    year: 1947, location: 'MARANELLO, ITALY',
+    teaser: 'A man who hated road cars\naccidentally built the greatest luxury brand.',
+    playtime: '10-15 MIN', difficulty: 3,
   },
   {
     id: 'amazon', label: 'AMAZON', available: false,
