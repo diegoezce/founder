@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import { useTypingEffect } from '../hooks/useTypingEffect';
 import { useKeyboard } from '../hooks/useKeyboard';
-import { useSound } from '../hooks/useSound';
 import { useAutoScroll } from '../hooks/useAutoScroll';
 
 export function CaseIntro({ caseData, onStart, soundEnabled }) {
   const [ready, setReady] = useState(false);
-  const { playBeep } = useSound(soundEnabled);
 
   const headerLines = [
     `CASE FILE: ${caseData.name}`,
@@ -29,7 +27,7 @@ export function CaseIntro({ caseData, onStart, soundEnabled }) {
     lineDelay: 80,
     onComplete: () => setReady(true),
   });
-  const scrollRef = useAutoScroll(displayed);
+  const sentinelRef = useAutoScroll(displayed);
 
   useKeyboard({
     ENTER: () => ready && onStart(),
@@ -38,16 +36,17 @@ export function CaseIntro({ caseData, onStart, soundEnabled }) {
 
   return (
     <div className="screen-content fade-in">
-      <div className="intro-lines" ref={scrollRef}>
+      <div className="intro-lines">
         {displayed.map((line, i) => {
           const isHeader = i < headerLines.length;
           return (
             <div key={i} className={`intro-line ${isHeader ? 'intro-header' : 'intro-narrative'}`}>
-              {line || ' '}
+              {line || ' '}
             </div>
           );
         })}
         {!isDone && <span className="cursor" />}
+        <div ref={sentinelRef} />
       </div>
 
       {isDone && (

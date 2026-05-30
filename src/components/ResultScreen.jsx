@@ -28,7 +28,7 @@ export function ResultScreen({ decision, choice, onNext, isLast, soundEnabled })
     lineDelay: 80,
     onComplete: () => setReady(true),
   });
-  const scrollRef = useAutoScroll(displayed);
+  const sentinelRef = useAutoScroll(displayed);
 
   const delta = outcome.statsDelta;
 
@@ -57,7 +57,7 @@ export function ResultScreen({ decision, choice, onNext, isLast, soundEnabled })
       </div>
 
       {/* ── Outcome — types in below ── */}
-      <div className="result-outcome-body" ref={scrollRef}>
+      <div className="result-outcome-body">
         {displayed.map((line, i) => {
           if (line == null) return null;
           const isOutcome  = line.startsWith('OUTCOME —');
@@ -73,6 +73,7 @@ export function ResultScreen({ decision, choice, onNext, isLast, soundEnabled })
             </div>
           );
         })}
+        <div ref={sentinelRef} />
       </div>
 
       {/* ── Attribute delta ── */}

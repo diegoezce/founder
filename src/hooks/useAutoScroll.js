@@ -1,12 +1,14 @@
 import { useEffect, useRef } from 'react';
 
 export function useAutoScroll(dependency) {
-  const ref = useRef(null);
+  const sentinelRef = useRef(null);
 
   useEffect(() => {
-    const el = ref.current?.closest('.screen-content');
-    if (el) el.scrollTop = el.scrollHeight;
+    if (!sentinelRef.current) return;
+    requestAnimationFrame(() => {
+      sentinelRef.current?.scrollIntoView({ behavior: 'instant', block: 'end' });
+    });
   }, [dependency]);
 
-  return ref;
+  return sentinelRef;
 }

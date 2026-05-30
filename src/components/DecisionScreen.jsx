@@ -29,7 +29,7 @@ export function DecisionScreen({ decision, decisionNumber, totalDecisions, onDec
     lineDelay: 60,
     onComplete: () => setTextDone(true),
   });
-  const scrollRef = useAutoScroll(displayed);
+  const sentinelRef = useAutoScroll(displayed);
 
   const choose = useCallback((key) => {
     if (chosen) return;
@@ -54,7 +54,7 @@ export function DecisionScreen({ decision, decisionNumber, totalDecisions, onDec
       <div className="decision-counter dim">{counter}</div>
       <div className="decision-spacer-sm" />
 
-      <div className="decision-body" ref={scrollRef}>
+      <div className="decision-body">
         {displayed.map((line, i) => {
           const isMeta = i < 3;
           return (
@@ -63,6 +63,7 @@ export function DecisionScreen({ decision, decisionNumber, totalDecisions, onDec
             </div>
           );
         })}
+        <div ref={sentinelRef} />
       </div>
 
       {textDone && (
