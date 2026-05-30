@@ -444,27 +444,42 @@
 }
 
 /* ─── Result Screen ───────────────────────── */
-.result-match-badge {
-  margin-bottom: 12px;
+.result-context {
+  font-size: 12px;
+  line-height: 1.7;
+  margin-bottom: 4px;
+  opacity: 0.45;
+}
+
+.result-ctx-meta {
   font-size: 11px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
+  color: var(--amber-dim);
+  margin-bottom: 4px;
 }
 
-.result-match {
-  color: var(--amber-bright);
-}
-
-.result-nomatch {
+.result-ctx-divider {
   color: var(--amber-faint);
+  margin: 4px 0;
+  font-size: 12px;
 }
 
-.result-spacer {
-  height: 4px;
+.result-ctx-line {
+  color: var(--amber-dim);
+  font-size: 12px;
 }
 
-.result-body {
+.result-ctx-choice {
+  color: var(--amber);
+  font-size: 12px;
+  margin-top: 4px;
+  opacity: 0.8;
+}
+
+.result-outcome-body {
   font-size: 13px;
   line-height: 1.8;
+  margin-top: 4px;
 }
 
 .result-line {

@@ -1,41 +1,36 @@
 import { useState } from 'react';
 import { useTypingEffect } from '../hooks/useTypingEffect';
 import { useKeyboard } from '../hooks/useKeyboard';
-import { useSound } from '../hooks/useSound';
 import { useAutoScroll } from '../hooks/useAutoScroll';
 
 export function ResultScreen({ decision, choice, onNext, isLast, soundEnabled }) {
   const [ready, setReady] = useState(false);
-  const { playBeep } = useSound(soundEnabled);
 
-  const outcome      = decision.outcomes[choice];
-  const historical   = decision.outcomes[decision.historicalChoice];
-  const wasCorrect   = choice === decision.historicalChoice;
+  const outcome    = decision.outcomes[choice];
+  const wasCorrect = choice === decision.historicalChoice;
+  const chosenOpt  = decision.options.find(o => o.key === choice);
+  const histOpt    = decision.options.find(o => o.key === decision.historicalChoice);
 
-  const resultLines = [
-    'YOUR DECISION:',
-    `  ${decision.options.find(o => o.key === choice)?.label}`,
-    '',
+  const outcomeLines = [
     '─'.repeat(44),
     '',
-    'HISTORICAL DECISION:',
-    `  ${decision.options.find(o => o.key === decision.historicalChoice)?.label}`,
-    '',
-    '─'.repeat(44),
+    wasCorrect
+      ? '✓ YOU MATCHED THE HISTORICAL DECISION'
+      : `✗ HISTORICAL DECISION: ${histOpt?.label}`,
     '',
     `OUTCOME — ${outcome.headline}`,
     '',
     ...outcome.narrative.split('\n'),
   ];
 
-  const { displayed, isDone } = useTypingEffect(resultLines, {
+  const { displayed, isDone } = useTypingEffect(outcomeLines, {
     speed: 16,
-    lineDelay: 90,
+    lineDelay: 80,
     onComplete: () => setReady(true),
   });
   const scrollRef = useAutoScroll(displayed);
 
-  const delta = decision.outcomes[choice].statsDelta;
+  const delta = outcome.statsDelta;
 
   useKeyboard({
     ENTER: () => ready && onNext(),
@@ -44,25 +39,34 @@ export function ResultScreen({ decision, choice, onNext, isLast, soundEnabled })
   }, true);
 
   return (
-    <div className="screen-content fade-in">
-      <div className="result-match-badge">
-        {wasCorrect
-          ? <span className="result-match glow">✓ MATCHES HISTORICAL RECORD</span>
-          : <span className="result-nomatch">✗ DIVERGES FROM HISTORY</span>
-        }
-      </div>
-      <div className="result-spacer" />
+    <div className="screen-content">
 
-      <div className="result-body" ref={scrollRef}>
+      {/* ── Decision context — static, already read ── */}
+      <div className="result-context dim">
+        <div className="result-ctx-meta">
+          YEAR: {decision.year} &nbsp;│&nbsp; {decision.location}
+        </div>
+        <div className="result-ctx-divider">{'─'.repeat(44)}</div>
+        {decision.situation.split('\n').map((l, i) => (
+          <div key={i} className="result-ctx-line">{l || ' '}</div>
+        ))}
+        <div className="result-ctx-divider">{'─'.repeat(44)}</div>
+        <div className="result-ctx-choice">
+          {'>'} {chosenOpt?.label}
+        </div>
+      </div>
+
+      {/* ── Outcome — types in below ── */}
+      <div className="result-outcome-body" ref={scrollRef}>
         {displayed.map((line, i) => {
           if (line == null) return null;
-          const isLabel   = line === 'YOUR DECISION:' || line === 'HISTORICAL DECISION:';
-          const isOutcome = line.startsWith('OUTCOME —');
-          const isDivider = line === '─'.repeat(44);
-          const className = isLabel   ? 'result-label'
-                          : isOutcome ? 'result-outcome-head glow'
-                          : isDivider ? 'result-divider dim'
-                          : 'result-text';
+          const isOutcome  = line.startsWith('OUTCOME —');
+          const isMatch    = line.startsWith('✓') || line.startsWith('✗');
+          const isDivider  = line === '─'.repeat(44);
+          const className  = isOutcome ? 'result-outcome-head glow'
+                           : isMatch   ? wasCorrect ? 'result-match glow' : 'result-nomatch'
+                           : isDivider ? 'result-divider dim'
+                           : 'result-text';
           return (
             <div key={i} className={`result-line ${className}`}>
               {line || ' '}
@@ -71,6 +75,7 @@ export function ResultScreen({ decision, choice, onNext, isLast, soundEnabled })
         })}
       </div>
 
+      {/* ── Attribute delta ── */}
       {isDone && (
         <div className="result-stats-delta fade-in">
           <div className="result-divider dim">{'─'.repeat(44)}</div>
@@ -84,6 +89,7 @@ export function ResultScreen({ decision, choice, onNext, isLast, soundEnabled })
         </div>
       )}
 
+      {/* ── Continue ── */}
       {ready && (
         <div className="result-continue fade-in" onClick={onNext}>
           <div className="result-divider dim">{'─'.repeat(44)}</div>
