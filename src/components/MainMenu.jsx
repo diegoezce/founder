@@ -13,7 +13,7 @@ function Stars({ count, total = 5 }) {
   );
 }
 
-export function MainMenu({ onSelectCase, soundEnabled, onToggleSound, onCycleTheme, onCycleLang }) {
+export function MainMenu({ onSelectCase, soundEnabled, onToggleSound, onCycleTheme, onCycleLang, caseProgress = {} }) {
   const [selected, setSelected] = useState(0);
   const { playClick, playError, playConfirm } = useSound(soundEnabled);
 
@@ -68,12 +68,13 @@ export function MainMenu({ onSelectCase, soundEnabled, onToggleSound, onCycleThe
           <div className="menu-spacer" />
 
           {CASE_MENU.map((c, idx) => {
-            const isSelected = idx === selected;
-            const num        = String(idx + 1).padStart(2, '0');
+            const isSelected  = idx === selected;
+            const num         = String(idx + 1).padStart(2, '0');
+            const completed   = c.available && caseProgress[c.id];
             return (
               <div
                 key={c.id}
-                className={`menu-item ${isSelected ? 'menu-item-selected' : ''} ${!c.available ? 'menu-item-locked' : ''}`}
+                className={`menu-item ${isSelected ? 'menu-item-selected' : ''} ${!c.available ? 'menu-item-locked' : ''} ${completed ? 'menu-item-completed' : ''}`}
                 onClick={() => {
                   setSelected(idx);
                   playClick();
@@ -85,6 +86,7 @@ export function MainMenu({ onSelectCase, soundEnabled, onToggleSound, onCycleThe
                 <span className="menu-num">[{num}]</span>
                 <span className="menu-label">{c.label}</span>
                 {!c.available && <span className="menu-locked">RECORD NOT YET RECOVERED</span>}
+                {completed && <span className="menu-score dim"> {completed.totalScore}pts</span>}
                 {isSelected && c.available && <span className="menu-cursor"> ◄</span>}
               </div>
             );
@@ -136,7 +138,22 @@ export function MainMenu({ onSelectCase, soundEnabled, onToggleSound, onCycleThe
           <div className="menu-profile-area">
             <div className="ctx-divider">{'─'.repeat(20)}</div>
             <div className="ctx-label dim">ANALYST PROFILE</div>
-            <div className="ctx-profile-empty dim">NO ACTIVE PROFILE</div>
+            {caseProgress[item.id] ? (
+              <div className="ctx-progress fade-in">
+                <div className="ctx-progress-row">
+                  SCORE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <span className="glow">{caseProgress[item.id].totalScore}</span>
+                </div>
+                <div className="ctx-progress-row dim">
+                  TIER &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{caseProgress[item.id].tier.toUpperCase()}
+                </div>
+                <div className="ctx-progress-row dim">
+                  ACCURACY &nbsp;{caseProgress[item.id].accuracy}%
+                </div>
+              </div>
+            ) : (
+              <div className="ctx-profile-empty dim">NO ACTIVE PROFILE</div>
+            )}
           </div>
         </div>
       </div>

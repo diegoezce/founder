@@ -830,6 +830,54 @@
   gap: 2px;
 }
 
+/* ─── Auth / Progress ────────────────────── */
+.auth-active {
+  color: var(--amber-bright);
+  text-shadow: var(--glow);
+}
+
+.menu-item-completed .menu-label {
+  color: var(--amber-bright);
+}
+
+.menu-score {
+  font-size: 9px;
+  letter-spacing: 0.05em;
+  margin-left: 4px;
+}
+
+.ctx-progress {
+  margin-top: 4px;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.ctx-progress-row {
+  letter-spacing: 0.06em;
+}
+
+.final-sync {
+  margin-top: 4px;
+  min-height: 16px;
+}
+
+.final-sync-status {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+.final-sync-login {
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.final-sync-login:hover {
+  color: var(--amber-bright);
+  text-shadow: var(--glow);
+}
+
 /* ═══════════════════════════════════════════
    Mobile overrides
    ═══════════════════════════════════════════ */

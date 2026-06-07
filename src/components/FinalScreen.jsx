@@ -9,7 +9,7 @@ import {
   formatBar,
 } from '../engine/statsEngine';
 
-export function FinalScreen({ caseData, stats, choices, onMenu, soundEnabled }) {
+export function FinalScreen({ caseData, stats, choices, onMenu, soundEnabled, user, syncStatus, onSignIn }) {
   const [phase,   setPhase]   = useState(0);
   const [counter, setCounter] = useState(0);
   const { playClick, playBeep } = useSound(soundEnabled);
@@ -111,6 +111,28 @@ export function FinalScreen({ caseData, stats, choices, onMenu, soundEnabled }) 
           <div className="final-divider dim">{'─'.repeat(44)}</div>
           <div className="final-note-label dim">HISTORICAL RECORD</div>
           <div className="final-note-text dim">{caseData.historicalNote}</div>
+        </div>
+      )}
+
+      {/* Sync status */}
+      {phase >= 3 && (
+        <div className="final-sync fade-in">
+          {syncStatus === 'saving' && (
+            <div className="final-sync-status dim">SYNCING RECORD<span className="cursor" /></div>
+          )}
+          {syncStatus === 'synced' && (
+            <div className="final-sync-status glow">[ RECORD SYNCED ]</div>
+          )}
+          {syncStatus === 'error' && (
+            <div className="final-sync-status dim">[ SYNC FAILED — RECORD SAVED LOCALLY ]</div>
+          )}
+          {syncStatus === 'idle' && !user && (
+            <div className="final-sync-status dim">
+              <span className="final-sync-login" onClick={onSignIn}>
+                [ AUTHENTICATE TO SAVE RECORD ]
+              </span>
+            </div>
+          )}
         </div>
       )}
 
