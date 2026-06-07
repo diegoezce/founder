@@ -1,31 +1,30 @@
 import { useState, useEffect } from 'react';
-import { supabase } from '../services/supabase';
+import {
+  GoogleAuthProvider,
+  signInWithPopup,
+  signOut as firebaseSignOut,
+  onAuthStateChanged,
+} from 'firebase/auth';
+import { auth } from '../services/firebase';
 
 export function useAuth() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    if (!supabase) return;
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setUser(session?.user ?? null);
-    });
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null);
-    });
-    return () => subscription.unsubscribe();
+    if (!auth) return;
+    const unsub = onAuthStateChanged(auth, setUser);
+    return unsub;
   }, []);
 
-  const signIn = () => {
-    if (!supabase) return;
-    supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: { redirectTo: window.location.origin },
-    });
+  const signIn = async () => {
+    if (!auth) return;
+    const provider = new GoogleAuthProvider();
+    await signInWithPopup(auth, provider);
   };
 
   const signOut = () => {
-    if (!supabase) return;
-    supabase.auth.signOut();
+    if (!auth) return;
+    firebaseSignOut(auth);
   };
 
   return { user, signIn, signOut };
