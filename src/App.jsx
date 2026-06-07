@@ -2,6 +2,9 @@ import { useReducer, useCallback, useState, useEffect } from 'react';
 import { reducer, createInitialState, SCREENS } from './engine/gameEngine';
 import { getCaseById, getLocalizedCase } from './data/cases/index';
 import { HELP_TEXT } from './engine/commandParser';
+import { getTotalScore } from './engine/statsEngine';
+import { useAuth } from './hooks/useAuth';
+import { saveProgress, loadAllProgress } from './services/progressService';
 
 import { BootSequence }   from './components/BootSequence';
 import { MainMenu }       from './components/MainMenu';
@@ -11,6 +14,7 @@ import { ResultScreen }   from './components/ResultScreen';
 import { FinalScreen }    from './components/FinalScreen';
 import { CommandLine }    from './components/CommandLine';
 import { PlayerStats }    from './components/PlayerStats';
+import { AuthButton }     from './components/AuthButton';
 import './styles/global.css';
 import './styles/components.css';
 
@@ -27,6 +31,9 @@ export default function App() {
   const [lang, setLang] = useState(
     () => localStorage.getItem('founder-lang') || 'en'
   );
+  const { user, signIn, signOut } = useAuth();
+  const [caseProgress, setCaseProgress] = useState({});
+  const [syncStatus, setSyncStatus] = useState('idle');
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -36,6 +43,35 @@ export default function App() {
   useEffect(() => {
     localStorage.setItem('founder-lang', lang);
   }, [lang]);
+
+  useEffect(() => {
+    if (!user) { setCaseProgress({}); return; }
+    loadAllProgress(user.id).then(setCaseProgress);
+  }, [user]);
+
+  useEffect(() => {
+    if (state.screen !== SCREENS.FINAL || !user || !caseData) return;
+    setSyncStatus('saving');
+    const totalScore = getTotalScore(state.stats);
+    const score = totalScore;
+    const tier = score >= 70 ? 'high' : score >= 45 ? 'medium' : 'low';
+    const correct = state.choices.filter(c => {
+      const dec = caseData.decisions.find(d => d.id === c.decisionId);
+      return dec && c.choiceKey === dec.historicalChoice;
+    }).length;
+    const accuracy = state.choices.length
+      ? Math.round((correct / state.choices.length) * 100)
+      : 0;
+    saveProgress(user.id, state.currentCase, { totalScore, tier, accuracy })
+      .then(() => {
+        setSyncStatus('synced');
+        setCaseProgress(prev => ({
+          ...prev,
+          [state.currentCase]: { totalScore, tier, accuracy },
+        }));
+      })
+      .catch(() => setSyncStatus('error'));
+  }, [state.screen, user]);
 
   const cycleTheme = useCallback(() => {
     setTheme(t => THEMES[(THEMES.indexOf(t) + 1) % THEMES.length]);
@@ -174,6 +210,7 @@ export default function App() {
             onToggleSound={toggleSound}
             onCycleTheme={cycleTheme}
             onCycleLang={cycleLang}
+            caseProgress={caseProgress}
           />
         )}
 
@@ -221,8 +258,11 @@ export default function App() {
             caseData={caseData}
             stats={state.stats}
             choices={state.choices}
-            onMenu={() => dispatch({ type: 'GO_MENU' })}
+            onMenu={() => { setSyncStatus('idle'); dispatch({ type: 'GO_MENU' }); }}
             soundEnabled={state.soundEnabled}
+            user={user}
+            syncStatus={syncStatus}
+            onSignIn={signIn}
           />
         )}
 
@@ -264,6 +304,7 @@ export default function App() {
                     [MENU]
                   </span>
                 )}
+                <AuthButton user={user} onSignIn={signIn} onSignOut={signOut} />
               </>
             )}
           </span>
