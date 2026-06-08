@@ -51,7 +51,7 @@ export default function App() {
 
   useEffect(() => {
     if (!user) { setCaseProgress({}); return; }
-    loadAllProgress(user.id).then(setCaseProgress);
+    loadAllProgress(user.uid).then(setCaseProgress);
   }, [user]);
 
   useEffect(() => {
@@ -77,7 +77,7 @@ export default function App() {
     const accuracy = state.choices.length
       ? Math.round((correct / state.choices.length) * 100)
       : 0;
-    saveProgress(user.id, state.currentCase, { totalScore, tier, accuracy })
+    saveProgress(user.uid, state.currentCase, { totalScore, tier, accuracy })
       .then(() => {
         setSyncStatus('synced');
         setCaseProgress(prev => ({
