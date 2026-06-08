@@ -14,7 +14,8 @@ import { ResultScreen }   from './components/ResultScreen';
 import { FinalScreen }    from './components/FinalScreen';
 import { CommandLine }    from './components/CommandLine';
 import { PlayerStats }    from './components/PlayerStats';
-import { AuthButton }     from './components/AuthButton';
+import { AuthButton }          from './components/AuthButton';
+import { LoginBenefitsModal }  from './components/LoginBenefitsModal';
 import './styles/global.css';
 import './styles/components.css';
 
@@ -32,6 +33,7 @@ export default function App() {
     () => localStorage.getItem('founder-lang') || 'en'
   );
   const { user, signIn, signOut } = useAuth();
+  const [showLoginModal, setShowLoginModal] = useState(false);
   const [caseProgress, setCaseProgress] = useState({});
   const [syncStatus, setSyncStatus] = useState('idle');
 
@@ -277,6 +279,13 @@ export default function App() {
           />
         )}
 
+        {showLoginModal && (
+          <LoginBenefitsModal
+            onConfirm={() => { setShowLoginModal(false); signIn(); }}
+            onCancel={() => setShowLoginModal(false)}
+          />
+        )}
+
         <div className="status-bar">
           <span className="status-bar-item">{statusLeft}</span>
           <span className="status-bar-item status-center">
@@ -304,7 +313,7 @@ export default function App() {
                     [MENU]
                   </span>
                 )}
-                <AuthButton user={user} onSignIn={signIn} onSignOut={signOut} />
+                <AuthButton user={user} onSignIn={() => setShowLoginModal(true)} onSignOut={signOut} />
               </>
             )}
           </span>
