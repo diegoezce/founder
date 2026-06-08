@@ -1,6 +1,6 @@
 import { useReducer, useCallback, useState, useEffect } from 'react';
 import { reducer, createInitialState, SCREENS } from './engine/gameEngine';
-import { getCaseById, getLocalizedCase } from './data/cases/index';
+import { getCaseById, getLocalizedCase, CASE_MENU } from './data/cases/index';
 import { HELP_TEXT } from './engine/commandParser';
 import { getTotalScore } from './engine/statsEngine';
 import { useAuth } from './hooks/useAuth';
@@ -16,10 +16,12 @@ import { CommandLine }    from './components/CommandLine';
 import { PlayerStats }    from './components/PlayerStats';
 import { AuthButton }          from './components/AuthButton';
 import { LoginBenefitsModal }  from './components/LoginBenefitsModal';
+import { CreditsScreen }       from './components/CreditsScreen';
 import './styles/global.css';
 import './styles/components.css';
 
 const THEMES = ['amber', 'green', 'mono'];
+const AVAILABLE_CASE_IDS = CASE_MENU.filter(c => c.available).map(c => c.id);
 
 export default function App() {
   const [state,    dispatch] = useReducer(reducer, createInitialState());
@@ -34,6 +36,7 @@ export default function App() {
   );
   const { user, signIn, signOut } = useAuth();
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showCredits, setShowCredits] = useState(false);
   const [caseProgress, setCaseProgress] = useState({});
   const [syncStatus, setSyncStatus] = useState('idle');
 
@@ -50,6 +53,16 @@ export default function App() {
     if (!user) { setCaseProgress({}); return; }
     loadAllProgress(user.id).then(setCaseProgress);
   }, [user]);
+
+  useEffect(() => {
+    const allDone = AVAILABLE_CASE_IDS.every(id => caseProgress[id]);
+    if (!allDone) return;
+    const seen = localStorage.getItem('founder-credits-seen');
+    if (!seen) {
+      setShowCredits(true);
+      localStorage.setItem('founder-credits-seen', '1');
+    }
+  }, [caseProgress]);
 
   useEffect(() => {
     if (state.screen !== SCREENS.FINAL || !user || !caseData) return;
@@ -279,6 +292,10 @@ export default function App() {
           />
         )}
 
+        {showCredits && (
+          <CreditsScreen onClose={() => setShowCredits(false)} />
+        )}
+
         {showLoginModal && (
           <LoginBenefitsModal
             onConfirm={() => { setShowLoginModal(false); signIn(); }}
@@ -313,6 +330,9 @@ export default function App() {
                     [MENU]
                   </span>
                 )}
+                <span className="status-btn" onClick={() => setShowCredits(true)} title="Credits">
+                  [CREDITS]
+                </span>
                 <AuthButton user={user} onSignIn={() => setShowLoginModal(true)} onSignOut={signOut} />
               </>
             )}

@@ -1,7 +1,7 @@
 export function AuthButton({ user, onSignIn, onSignOut }) {
   if (!user) {
     return (
-      <span className="status-btn" onClick={onSignIn} title="Authenticate with Google">
+      <span className="status-btn login-pulse" onClick={onSignIn} title="Sign in to save progress">
         [LOGIN]
       </span>
     );
