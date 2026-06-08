@@ -50,20 +50,23 @@ export function MainMenu({ onSelectCase, soundEnabled, onToggleSound, onCycleThe
   return (
     <div className="screen-content fade-in menu-layout">
 
-      {/* ── Header ─────────────────────────── */}
-      <div className="menu-header">
-        <div className="menu-access-label dim">
-          ACCESS LEVEL: EXECUTIVE &nbsp;│&nbsp; CLASSIFIED HISTORICAL RECORDS
-        </div>
-        <div className="menu-border">{'═'.repeat(44)}</div>
-        <div className="menu-title glow-strong">FOUNDER</div>
-        <div className="menu-tagline">WHAT WOULD YOU HAVE DONE?</div>
-        <div className="menu-border">{'═'.repeat(44)}</div>
-      </div>
-
-      {/* ── Case list ──────────────────────── */}
       <div className="menu-columns">
-        <div className="menu-list">
+        {/* ── Left column ────────────────────── */}
+        <div className="menu-left">
+
+          {/* ── Header ───────────────────────── */}
+          <div className="menu-header">
+            <div className="menu-access-label dim">
+              ACCESS LEVEL: EXECUTIVE &nbsp;│&nbsp; CLASSIFIED HISTORICAL RECORDS
+            </div>
+            <div className="menu-border">{'═'.repeat(44)}</div>
+            <div className="menu-title glow-strong">FOUNDER</div>
+            <div className="menu-tagline">WHAT WOULD YOU HAVE DONE?</div>
+            <div className="menu-border">{'═'.repeat(44)}</div>
+          </div>
+
+          {/* ── Case list ────────────────────── */}
+          <div className="menu-list">
           <div className="menu-section-label">CORPORATE ARCHIVES DATABASE</div>
           <div className="menu-spacer" />
 
@@ -97,7 +100,16 @@ export function MainMenu({ onSelectCase, soundEnabled, onToggleSound, onCycleThe
             <span className="menu-prompt">SELECT CASE:</span>
             <span className="cursor" />
           </div>
-        </div>
+          </div>{/* end menu-list */}
+
+          {/* ── Footer ───────────────────────── */}
+          <div className="menu-footer">
+            <div className="menu-hint">
+              ↑↓ NAVIGATE &nbsp;│&nbsp; ENTER SELECT &nbsp;│&nbsp; S SOUND &nbsp;│&nbsp; T THEME &nbsp;│&nbsp; L LANG
+            </div>
+          </div>
+
+        </div>{/* end menu-left */}
 
         {/* ── Context panel ──────────────────── */}
         <div className="menu-context">
@@ -158,13 +170,6 @@ export function MainMenu({ onSelectCase, soundEnabled, onToggleSound, onCycleThe
               </div>
             )}
           </div>
-        </div>
-      </div>
-
-      {/* ── Footer ─────────────────────────── */}
-      <div className="menu-footer">
-        <div className="menu-hint">
-          ↑↓ NAVIGATE &nbsp;│&nbsp; ENTER SELECT &nbsp;│&nbsp; S SOUND &nbsp;│&nbsp; T THEME &nbsp;│&nbsp; L LANG
         </div>
       </div>
     </div>
