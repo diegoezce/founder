@@ -101,6 +101,31 @@ export function MainMenu({ onSelectCase, soundEnabled, onToggleSound, onCycleThe
 
         {/* ── Context panel ──────────────────── */}
         <div className="menu-context">
+
+          {/* ── Profile area (top) ─────────────── */}
+          <div className="menu-profile-area">
+            <div className="ctx-label dim">ANALYST PROFILE</div>
+            <div className="ctx-divider">{'─'.repeat(20)}</div>
+            {caseProgress[item.id] ? (
+              <div className="ctx-progress fade-in">
+                <div className="ctx-progress-row">
+                  SCORE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <span className="glow">{caseProgress[item.id].totalScore}</span>
+                </div>
+                <div className="ctx-progress-row dim">
+                  TIER &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{caseProgress[item.id].tier.toUpperCase()}
+                </div>
+                <div className="ctx-progress-row dim">
+                  ACCURACY &nbsp;{caseProgress[item.id].accuracy}%
+                </div>
+              </div>
+            ) : (
+              <div className="ctx-profile-empty dim">NO ACTIVE PROFILE</div>
+            )}
+            <div className="ctx-divider" style={{marginTop: '8px'}}>{'─'.repeat(20)}</div>
+          </div>
+
+          {/* ── Case briefing (below) ──────────── */}
           <div className="menu-context-inner" key={selected}>
             <div className="ctx-label dim">CASE BRIEFING</div>
             <div className="ctx-divider">{'─'.repeat(20)}</div>
@@ -131,28 +156,6 @@ export function MainMenu({ onSelectCase, soundEnabled, onToggleSound, onCycleThe
                 <div className="ctx-divider">{'─'.repeat(20)}</div>
                 <div className="ctx-enter">ENTER TO OPEN FILE</div>
               </div>
-            )}
-          </div>
-
-          {/* ── Profile area ───────────────── */}
-          <div className="menu-profile-area">
-            <div className="ctx-divider">{'─'.repeat(20)}</div>
-            <div className="ctx-label dim">ANALYST PROFILE</div>
-            {caseProgress[item.id] ? (
-              <div className="ctx-progress fade-in">
-                <div className="ctx-progress-row">
-                  SCORE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span className="glow">{caseProgress[item.id].totalScore}</span>
-                </div>
-                <div className="ctx-progress-row dim">
-                  TIER &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{caseProgress[item.id].tier.toUpperCase()}
-                </div>
-                <div className="ctx-progress-row dim">
-                  ACCURACY &nbsp;{caseProgress[item.id].accuracy}%
-                </div>
-              </div>
-            ) : (
-              <div className="ctx-profile-empty dim">NO ACTIVE PROFILE</div>
             )}
           </div>
         </div>

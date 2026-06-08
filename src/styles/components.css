@@ -147,7 +147,8 @@
 }
 
 .menu-profile-area {
-  margin-top: 8px;
+  margin-bottom: 4px;
+  flex-shrink: 0;
 }
 
 .menu-section-label {
